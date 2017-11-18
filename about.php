@@ -4,33 +4,17 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Music Giant</title>
+		<title>Re-Volution</title>
 		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 		<link rel="stylesheet" type="text/css" href="css/layout-simple.css" />
-		<link rel="stylesheet" type="text/css" href="css/dotmenu.css" />
+		<link rel="stylesheet" type="text/css" href="css/about.css" />
 	</head>
 	<body>
 		<div id="container" class="container">
 			<header class="intro">
-				<img class="intro__image" src="images/1.jpg" >
-				<div class="window-container valign">
-					<div id="toggle" class="button_container">
-						<span class="top"></span>
-						<span class="top2"></span>
-						<span class="middle"></span>
-						<span class="bottom"></span>
-						<span class="bottom2"></span>
-					</div>
-					<div id="overlay" class="overlay">
-						<div class="overlay-menu">
-							<ul>
-								<li><a href="login.php" target="_blank">Login In</a></li>
-								<li><a href="about.php" target="_blank">About Us</a></li></ul>
-							</div>
-						</div>
-					</div>
+				<img class="intro__image" src="images/2.jpg" >
 				<div class="intro__content">
-					<h1 class="intro__title">Re-Volution</h1>
+					<h1 class="intro__title">About Us</h1>
 					<div class="intro__subtitle">
 							<button class="trigger">
 							<svg width="100%" height="100%" viewBox="0 0 60 60" preserveAspectRatio="none">
@@ -49,29 +33,29 @@
 					</div>
 				</div><!-- /intro__content -->
 			</header><!-- /intro -->
-			<section class="items-wrap">
-				<a href="#" class="item">
-					<img class="item__image" src="images/ice/1.jpg">
-					<h2 class="item__title">Sunny</h2></a>
-				<a href="#" class="item">
-					<img class="item__image" src="images/ice/5.jpg">
-					<h2 class="item__title">Gloomy</h2></a>
-				<a href="#" class="item">
-					<img class="item__image" src="images/ice/3.jpg">
-					<h2 class="item__title">Snowy</h2></a>
-				<a href="#" class="item">
-					<img class="item__image" src="images/ice/6.jpg">
-					<h2 class="item__title">Icy</h2></a>
-				<a href="#" class="item">
-					<img class="item__image" src="images/ice/4.jpg">
-					<h2 class="item__title">Windy</h2></a>
-				<a href="#" class="item">
-					<img class="item__image" src="images/ice/2.jpg">
-					<h2 class="item__title">Rainy</h2></a>
-			</section>
-		</div><!-- /container -->
+		<section class="items-wrap">
+			<a>
+				<p>
+					Re-Volution is the go to place for your music. This web application has the music you are looking for any type of weather.
+					We are trying to answer question: how can we appreciate music better?
+					The better mood we’re in the better the music sounds.
+					Most of the time our moods are affect by our environment and the location we live in.
+					The weather plays a significant role in our mood.
+					Therefore, based on strong research and traveling to
+					many different and unique locations,
+					we have come up with Re-Volution.
+					We have total of six different moods and with each mood
+					we have come up pre-loaded playlist and the option to customize each playlist.
+					So, sit back, relax, and enjoy!
+				</p>
+				<h3>The Vision</h3>
+				<p style="margin-top:-15px;">To enhance consumers' music experience and create value through data-driven technology."</p>
+				<h3>The Motto</h3>
+				<p style="margin-top:-15px;">Just Enjoy It!</p></a>
+		</section>
+	</div>
 		<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-		<script  src="js/dotmenu.js"></script>
+    <script  src="js/dotmenu.js"></script>
 		<script src="js/classie.js"></script>
 		<script>
 			(function() {
