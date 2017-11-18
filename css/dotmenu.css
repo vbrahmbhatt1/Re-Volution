@@ -1,0 +1,128 @@
+.window-container {
+  width: 175px;
+  display: block;
+  height: 175px;
+  margin: 0 auto;
+}
+
+.window-container .helper-text{
+  display: block;
+    padding: 15px 55px;
+}
+
+
+/*Vertical align helper class*/
+.valign {
+  position: absolute;
+  top: 10%;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+
+/*Styles for Dot Menu*/
+.button_container {
+  position: fixed;
+  top: 14px;
+  right: 15px;
+  height: 25px;
+  width: 25px;
+  cursor: pointer;
+  z-index: 9999;
+  transition: opacity .25s ease;
+}
+
+.button_container span {
+  background:  #FFFFFF;
+  border: none;
+  height: 5px;
+  width: 5px;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  transition: all .35s ease;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.button_container:hover {
+  opacity: .7;
+}
+
+.button_container span:nth-of-type(3) {
+  top: 9px;
+}
+
+.button_container span:nth-of-type(4),
+.button_container span:nth-of-type(5) {
+  top: 18px;
+}
+
+.button_container.active .top,
+.button_container.active .bottom {
+  transform: translateX(-10px);
+}
+
+.button_container.active .top2,
+.button_container.active .bottom2 {
+  transform: translateX(10px);
+}
+
+/*Overlay styles, after click on menu icon*/
+
+.overlay {
+  position: fixed;
+  background: #121111;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 0%;
+  opacity: 0;
+  z-index: 8888;
+  visibility: hidden;
+  -webkit-transition: opacity .35s, visibility .35s, height .35s;
+  transition: opacity .35s, visibility .35s, height .35s;
+  overflow: hidden;
+}
+
+.overlay.open {
+  opacity: .95;
+  visibility: visible;
+  height: 100%;
+}
+
+.overlay .overlay-menu {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5em;
+  font-weight: 400;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.overlay .overlay-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  position: relative;
+  height: 100%;
+}
+
+.overlay li {opacity: 0;}
+
+.overlay.open li {
+  animation: fadein 0.5s ease forwards;
+  animation-delay: 0.35s;
+  padding: 3px;
+}
+
+@keyframes fadein {
+  from {opacity: 0;}
+  to {opacity: 1;}}
+
+@-webkit-keyframes fadein {
+  from {opacity: 0;}
+  to {opacity: 1;}}

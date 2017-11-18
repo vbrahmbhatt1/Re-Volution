@@ -190,13 +190,6 @@
 	transition: transform 0.3s, opacity 0.3s;
 }
 
-.item:hover .item__title {
-	opacity: 0;
-	-webkit-transform: translate3d(0, 20px, 0);
-	transform: translate3d(0, 20px, 0);
-}
-
-
 /* Media Queries */
 
 @media screen and (max-width: 1440px) {

@@ -5,14 +5,31 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Music Giant</title>
-		<link rel="shortcut icon" href="../favicon.ico">
 		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 		<link rel="stylesheet" type="text/css" href="css/layout-simple.css" />
+		<link rel="stylesheet" type="text/css" href="css/dotmenu.css" />
 	</head>
 	<body>
 		<div id="container" class="container">
 			<header class="intro">
 				<img class="intro__image" src="images/1.jpg" >
+				<div class="window-container valign">
+					<div id="toggle" class="button_container">
+						<span class="top"></span>
+						<span class="top2"></span>
+						<span class="middle"></span>
+						<span class="bottom"></span>
+						<span class="bottom2"></span>
+					</div>
+					<div id="overlay" class="overlay">
+						<div class="overlay-menu">
+							<ul>
+								<li>Login In</li>
+								<li>Register</li>
+								<li>About Us</li></ul>
+							</div>
+						</div>
+					</div>
 				<div class="intro__content">
 					<h1 class="intro__title">Re-Volution</h1>
 					<div class="intro__subtitle">
@@ -21,15 +38,14 @@
 								<g class="icon icon--grid">
 									<rect x="30" y="5.5" width="20" height="20"/>
 									<rect x="4" y="5.5" width="20" height="20"/>
-									<rect x="30" y="33.5" width="20" height="20"/>
-									<rect x="4" y="33.5" width="20" height="20"/>
+									<rect x="30" y="30" width="20" height="20"/>
+									<rect x="4" y="30" width="20" height="20"/>
 								</g>
 								<g class="icon icon--cross">
-									<line x1="4.5" y1="55.5" x2="54.953" y2="5.046"/>
-									<line x1="54.953" y1="55.5" x2="4.5" y2="5.047"/>
+									<line x1="4" y1="50" x2="50" y2="6"/>
+									<line x1="50" y1="50" x2="4" y2="6"/>
 								</g>
 							</svg>
-							<span>View content</span>
 						</button>
 					</div>
 				</div><!-- /intro__content -->
@@ -55,6 +71,8 @@
 					<h2 class="item__title">Rainy</h2></a>
 			</section>
 		</div><!-- /container -->
+		<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script  src="js/dotmenu.js"></script>
 		<script src="js/classie.js"></script>
 		<script>
 			(function() {
