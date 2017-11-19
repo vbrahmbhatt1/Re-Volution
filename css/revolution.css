@@ -1,0 +1,35 @@
+.rev-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.rev-container-song {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.rev-item-5 {
+    flex-grow: 1;
+    width: 7%;
+}
+
+.rev-item-10 {
+    flex-grow: 1;
+    width: 12%;
+}
+
+.rev-item-30 {
+    flex-grow: 1;
+    width: 32%;
+}
+
+.rev-item-50 {
+    flex-grow: 1;
+    width: 52%;
+}
+
+.rev-item-100 {
+    flex-grow: 1;
+    width: 100%;
+}
