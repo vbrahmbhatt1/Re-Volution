@@ -14,7 +14,7 @@
                         <span class="glyphicon glyphicon-play"></span>
                     </article>
 
-                    <article class="rev-item-50">
+                    <article class="rev-item-30">
                         <label>Test Song Title</label>
                     </article>
 
@@ -22,7 +22,7 @@
                         <label>Test Song Artist</label>
                     </article>
 
-                    <article class="rev-item-10">
+                    <article class="rev-item-30">
                         <label>Test Song Length</label>
                     </article>
 
@@ -40,7 +40,7 @@
                         <span class="glyphicon glyphicon-play"></span>
                     </article>
 
-                    <article class="rev-item-50">
+                    <article class="rev-item-30">
                         <label>Test Song Title</label>
                     </article>
 
@@ -48,7 +48,7 @@
                         <label>Test Song Artist</label>
                     </article>
 
-                    <article class="rev-item-10">
+                    <article class="rev-item-30">
                         <label>Test Song Length</label>
                     </article>
 
@@ -65,7 +65,7 @@
                         <span class="glyphicon glyphicon-play"></span>
                     </article>
 
-                    <article class="rev-item-50">
+                    <article class="rev-item-30">
                         <label>Test Song Title</label>
                     </article>
 
@@ -73,7 +73,7 @@
                         <label>Test Song Artist</label>
                     </article>
 
-                    <article class="rev-item-10">
+                    <article class="rev-item-30">
                         <label>Test Song Length</label>
                     </article>
 
@@ -90,7 +90,7 @@
                         <span class="glyphicon glyphicon-play"></span>
                     </article>
 
-                    <article class="rev-item-50">
+                    <article class="rev-item-30">
                         <label>Test Song Title</label>
                     </article>
 
@@ -98,7 +98,7 @@
                         <label>Test Song Artist</label>
                     </article>
 
-                    <article class="rev-item-10">
+                    <article class="rev-item-30">
                         <label>Test Song Length</label>
                     </article>
 
