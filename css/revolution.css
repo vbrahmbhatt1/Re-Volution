@@ -1,3 +1,4 @@
+/*flexbox code start*/
 .rev-container {
     display: flex;
     flex-wrap: wrap;
@@ -32,4 +33,9 @@
 .rev-item-100 {
     flex-grow: 1;
     width: 100%;
+}
+/*flexbox code end*/
+
+article span:hover {
+    color: blue;
 }
