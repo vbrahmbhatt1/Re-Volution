@@ -7,7 +7,7 @@
     </head>
 
     <body>
-        <section class="rev-container">
+        <section class="rev-container-column">
             <article class="rev-item-100">
                 <section class="rev-container-song">
                     <article class="rev-item-5">

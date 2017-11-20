@@ -1,5 +1,5 @@
 /*flexbox code start*/
-.rev-container {
+.rev-container-column {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -38,4 +38,9 @@
 
 article span:hover {
     color:green;
+}
+
+.rev-basic-container {
+    display: flex;
+    width: 100%;
 }

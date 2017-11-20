@@ -8,6 +8,8 @@
 		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 		<link rel="stylesheet" type="text/css" href="css/layout-simple.css" />
 		<link rel="stylesheet" type="text/css" href="css/dotmenu.css" />
+		<link rel="stylesheet" type="text/css" href="css/revolution.css"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	</head>
 	<body>
 		<div id="container" class="container">
@@ -22,112 +24,6 @@
 						<span class="bottom2"></span>
 					</div>
 
-						<!-- Start playlist-->
-							 <section class="rev-container">
-					<article class="rev-item-100">
-						<section class="rev-container-song">
-							<article class="rev-item-5">
-								<span class="glyphicon glyphicon-play"></span>
-							</article>
-
-							<article class="rev-item-30">
-								<label>Test Song Title</label>
-							</article>
-
-							<article class="rev-item-30">
-								<label>Test Song Artist</label>
-							</article>
-
-							<article class="rev-item-30">
-								<label>Test Song Length</label>
-							</article>
-
-							<article class="rev-item-5">
-								<span class="glyphicon glyphicon-plus"></span>
-							</article>
-							
-						</section>
-					</article>
-
-
-					<article class="rev-item-100">
-						<section class="rev-container-song">
-							<article class="rev-item-5">
-								<span class="glyphicon glyphicon-play"></span>
-							</article>
-
-							<article class="rev-item-30">
-								<label>Test Song Title</label>
-							</article>
-
-							<article class="rev-item-30">
-								<label>Test Song Artist</label>
-							</article>
-
-							<article class="rev-item-30">
-								<label>Test Song Length</label>
-							</article>
-
-							<article class="rev-item-5">
-								<span class="glyphicon glyphicon-plus"></span>
-							</article>
-							
-						</section>
-					</article>
-
-					<article class="rev-item-100">
-						<section class="rev-container-song">
-							<article class="rev-item-5">
-								<span class="glyphicon glyphicon-play"></span>
-							</article>
-
-							<article class="rev-item-30">
-								<label>Test Song Title</label>
-							</article>
-
-							<article class="rev-item-30">
-								<label>Test Song Artist</label>
-							</article>
-
-							<article class="rev-item-30">
-								<label>Test Song Length</label>
-							</article>
-
-							<article class="rev-item-5">
-								<span class="glyphicon glyphicon-plus"></span>
-							</article>
-							
-						</section>
-					</article>
-
-					<article class="rev-item-100">
-						<section class="rev-container-song">
-							<article class="rev-item-5">
-								<span class="glyphicon glyphicon-play"></span>
-							</article>
-
-							<article class="rev-item-30">
-								<label>Test Song Title</label>
-							</article>
-
-							<article class="rev-item-30">
-								<label>Test Song Artist</label>
-							</article>
-
-							<article class="rev-item-30">
-								<label>Test Song Length</label>
-							</article>
-
-							<article class="rev-item-5">
-								<span class="glyphicon glyphicon-plus"></span>
-							</article>
-							
-						</section>
-					</article>
-
-        </section>
-					<!-- End playlist-->
-
 					<div id="overlay" class="overlay">
 						<div class="overlay-menu">
 							<ul>
@@ -136,25 +32,141 @@
 							</div>
 						</div>
 					</div>
-				<div class="intro__content">
-					<h1 class="intro__title">Re-Volution</h1>
-					<div class="intro__subtitle">
-							<button class="trigger">
-							<svg width="100%" height="100%" viewBox="0 0 60 60" preserveAspectRatio="none">
-								<g class="icon icon--grid">
-									<rect x="30" y="5.5" width="20" height="20"/>
-									<rect x="4" y="5.5" width="20" height="20"/>
-									<rect x="30" y="30" width="20" height="20"/>
-									<rect x="4" y="30" width="20" height="20"/>
-								</g>
-								<g class="icon icon--cross">
-									<line x1="4" y1="50" x2="50" y2="6"/>
-									<line x1="50" y1="50" x2="4" y2="6"/>
-								</g>
-							</svg>
-						</button>
-					</div>
-				</div><!-- /intro__content -->
+				<section class="intro__content rev-basic-container">
+					<article class="rev-item-50">
+						<section class="rev-container-column">
+							<article class="rev-item-100">
+								<h1 class="intro__title">Re-Volution</h1>
+							<article>
+
+							<article class="rev-item-100">
+								<div class="intro__subtitle">
+										<button class="trigger">
+										<svg width="100%" height="100%" viewBox="0 0 60 60" preserveAspectRatio="none">
+											<g class="icon icon--grid">
+												<rect x="30" y="5.5" width="20" height="20"/>
+												<rect x="4" y="5.5" width="20" height="20"/>
+												<rect x="30" y="30" width="20" height="20"/>
+												<rect x="4" y="30" width="20" height="20"/>
+											</g>
+											<g class="icon icon--cross">
+												<line x1="4" y1="50" x2="50" y2="6"/>
+												<line x1="50" y1="50" x2="4" y2="6"/>
+											</g>
+										</svg>
+									</button>
+								</div>
+							</article>
+						</section>
+					</article>
+
+					<article class="rev-item-50">
+						<section class="rev-container-column">
+            <article class="rev-item-100">
+                <section class="rev-container-song">
+                    <article class="rev-item-5">
+                        <span class="glyphicon glyphicon-play"></span>
+                    </article>
+
+                    <article class="rev-item-30">
+                        <label>Test Song Title</label>
+                    </article>
+
+                    <article class="rev-item-30">
+                        <label>Test Song Artist</label>
+                    </article>
+
+                    <article class="rev-item-30">
+                        <label>Test Song Length</label>
+                    </article>
+
+                    <article class="rev-item-5">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </article>
+                    
+                </section>
+            </article>
+
+
+            <article class="rev-item-100">
+                <section class="rev-container-song">
+                    <article class="rev-item-5">
+                        <span class="glyphicon glyphicon-play"></span>
+                    </article>
+
+                    <article class="rev-item-30">
+                        <label>Test Song Title</label>
+                    </article>
+
+                    <article class="rev-item-30">
+                        <label>Test Song Artist</label>
+                    </article>
+
+                    <article class="rev-item-30">
+                        <label>Test Song Length</label>
+                    </article>
+
+                    <article class="rev-item-5">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </article>
+                    
+                </section>
+            </article>
+
+            <article class="rev-item-100">
+                <section class="rev-container-song">
+                    <article class="rev-item-5">
+                        <span class="glyphicon glyphicon-play"></span>
+                    </article>
+
+                    <article class="rev-item-30">
+                        <label>Test Song Title</label>
+                    </article>
+
+                    <article class="rev-item-30">
+                        <label>Test Song Artist</label>
+                    </article>
+
+                    <article class="rev-item-30">
+                        <label>Test Song Length</label>
+                    </article>
+
+                    <article class="rev-item-5">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </article>
+                    
+                </section>
+            </article>
+
+            <article class="rev-item-100">
+                <section class="rev-container-song">
+                    <article class="rev-item-5">
+                        <span class="glyphicon glyphicon-play"></span>
+                    </article>
+
+                    <article class="rev-item-30">
+                        <label>Test Song Title</label>
+                    </article>
+
+                    <article class="rev-item-30">
+                        <label>Test Song Artist</label>
+                    </article>
+
+                    <article class="rev-item-30">
+                        <label>Test Song Length</label>
+                    </article>
+
+                    <article class="rev-item-5">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </article>
+                    
+                </section>
+            </article>
+
+        </section>
+					</article>
+
+				</section><!-- /intro__content -->
 			</header><!-- /intro -->
 			<section class="items-wrap">
 				<a href="#" class="item">
