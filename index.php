@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	</head>
 	<body>
-		<div id="container" class="container">
+		<div id="container" class="rev-container">
 			<header class="intro">
 				<img class="intro__image" src="images/1.jpg" >
 				<div class="window-container valign">
@@ -33,7 +33,7 @@
 						</div>
 					</div>
 				<section class="intro__content rev-basic-container">
-					<article class="rev-item-50">
+					<article class="rev-item-70">
 						<section class="rev-container-column">
 							<article class="rev-item-100">
 								<h1 class="intro__title">Re-Volution</h1>
@@ -60,7 +60,7 @@
 						</section>
 					</article>
 
-					<article class="rev-item-50">
+					<article class="rev-item-30">
 						<section class="rev-container-column">
             <article class="rev-item-100">
                 <section class="rev-container-song">
@@ -114,6 +114,256 @@
             </article>
 
             <article class="rev-item-100">
+                <section class="rev-container-song">
+                    <article class="rev-item-5">
+                        <span class="glyphicon glyphicon-play"></span>
+                    </article>
+
+                    <article class="rev-item-30">
+                        <label>Test Song Title</label>
+                    </article>
+
+                    <article class="rev-item-30">
+                        <label>Test Song Artist</label>
+                    </article>
+
+                    <article class="rev-item-30">
+                        <label>Test Song Length</label>
+                    </article>
+
+                    <article class="rev-item-5">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </article>
+                    
+                </section>
+            </article>
+
+			<article class="rev-item-100">
+                <section class="rev-container-song">
+                    <article class="rev-item-5">
+                        <span class="glyphicon glyphicon-play"></span>
+                    </article>
+
+                    <article class="rev-item-30">
+                        <label>Test Song Title</label>
+                    </article>
+
+                    <article class="rev-item-30">
+                        <label>Test Song Artist</label>
+                    </article>
+
+                    <article class="rev-item-30">
+                        <label>Test Song Length</label>
+                    </article>
+
+                    <article class="rev-item-5">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </article>
+                    
+                </section>
+			</article>
+			
+			<article class="rev-item-100">
+                <section class="rev-container-song">
+                    <article class="rev-item-5">
+                        <span class="glyphicon glyphicon-play"></span>
+                    </article>
+
+                    <article class="rev-item-30">
+                        <label>Test Song Title</label>
+                    </article>
+
+                    <article class="rev-item-30">
+                        <label>Test Song Artist</label>
+                    </article>
+
+                    <article class="rev-item-30">
+                        <label>Test Song Length</label>
+                    </article>
+
+                    <article class="rev-item-5">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </article>
+                    
+                </section>
+			</article>
+			
+			<article class="rev-item-100">
+                <section class="rev-container-song">
+                    <article class="rev-item-5">
+                        <span class="glyphicon glyphicon-play"></span>
+                    </article>
+
+                    <article class="rev-item-30">
+                        <label>Test Song Title</label>
+                    </article>
+
+                    <article class="rev-item-30">
+                        <label>Test Song Artist</label>
+                    </article>
+
+                    <article class="rev-item-30">
+                        <label>Test Song Length</label>
+                    </article>
+
+                    <article class="rev-item-5">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </article>
+                    
+                </section>
+			</article>
+			
+			<article class="rev-item-100">
+                <section class="rev-container-song">
+                    <article class="rev-item-5">
+                        <span class="glyphicon glyphicon-play"></span>
+                    </article>
+
+                    <article class="rev-item-30">
+                        <label>Test Song Title</label>
+                    </article>
+
+                    <article class="rev-item-30">
+                        <label>Test Song Artist</label>
+                    </article>
+
+                    <article class="rev-item-30">
+                        <label>Test Song Length</label>
+                    </article>
+
+                    <article class="rev-item-5">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </article>
+                    
+                </section>
+			</article>
+			
+			<article class="rev-item-100">
+                <section class="rev-container-song">
+                    <article class="rev-item-5">
+                        <span class="glyphicon glyphicon-play"></span>
+                    </article>
+
+                    <article class="rev-item-30">
+                        <label>Test Song Title</label>
+                    </article>
+
+                    <article class="rev-item-30">
+                        <label>Test Song Artist</label>
+                    </article>
+
+                    <article class="rev-item-30">
+                        <label>Test Song Length</label>
+                    </article>
+
+                    <article class="rev-item-5">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </article>
+                    
+                </section>
+			</article>
+			
+			<article class="rev-item-100">
+                <section class="rev-container-song">
+                    <article class="rev-item-5">
+                        <span class="glyphicon glyphicon-play"></span>
+                    </article>
+
+                    <article class="rev-item-30">
+                        <label>Test Song Title</label>
+                    </article>
+
+                    <article class="rev-item-30">
+                        <label>Test Song Artist</label>
+                    </article>
+
+                    <article class="rev-item-30">
+                        <label>Test Song Length</label>
+                    </article>
+
+                    <article class="rev-item-5">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </article>
+                    
+                </section>
+			</article>
+			
+			<article class="rev-item-100">
+                <section class="rev-container-song">
+                    <article class="rev-item-5">
+                        <span class="glyphicon glyphicon-play"></span>
+                    </article>
+
+                    <article class="rev-item-30">
+                        <label>Test Song Title</label>
+                    </article>
+
+                    <article class="rev-item-30">
+                        <label>Test Song Artist</label>
+                    </article>
+
+                    <article class="rev-item-30">
+                        <label>Test Song Length</label>
+                    </article>
+
+                    <article class="rev-item-5">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </article>
+                    
+                </section>
+			</article>
+			
+			<article class="rev-item-100">
+                <section class="rev-container-song">
+                    <article class="rev-item-5">
+                        <span class="glyphicon glyphicon-play"></span>
+                    </article>
+
+                    <article class="rev-item-30">
+                        <label>Test Song Title</label>
+                    </article>
+
+                    <article class="rev-item-30">
+                        <label>Test Song Artist</label>
+                    </article>
+
+                    <article class="rev-item-30">
+                        <label>Test Song Length</label>
+                    </article>
+
+                    <article class="rev-item-5">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </article>
+                    
+                </section>
+			</article>
+			
+			<article class="rev-item-100">
+                <section class="rev-container-song">
+                    <article class="rev-item-5">
+                        <span class="glyphicon glyphicon-play"></span>
+                    </article>
+
+                    <article class="rev-item-30">
+                        <label>Test Song Title</label>
+                    </article>
+
+                    <article class="rev-item-30">
+                        <label>Test Song Artist</label>
+                    </article>
+
+                    <article class="rev-item-30">
+                        <label>Test Song Length</label>
+                    </article>
+
+                    <article class="rev-item-5">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </article>
+                    
+                </section>
+			</article>
+			
+			<article class="rev-item-100">
                 <section class="rev-container-song">
                     <article class="rev-item-5">
                         <span class="glyphicon glyphicon-play"></span>

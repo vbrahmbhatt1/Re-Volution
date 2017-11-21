@@ -6,6 +6,12 @@
     width: 600px;
 }
 
+.rev-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
 .rev-container-song {
     display: flex;
 }
@@ -22,12 +28,17 @@
 
 .rev-item-30 {
     flex-grow: 1;
-    width: 32%;
+    width: 28%;
 }
 
 .rev-item-50 {
     flex-grow: 1;
     width: 52%;
+}
+
+.rev-item-70 {
+    flex-grow: 1;
+    width: 60%;
 }
 
 .rev-item-100 {
