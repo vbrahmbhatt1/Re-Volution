@@ -136,8 +136,7 @@
                     </article>
                     
                 </section>
-            </article>
-
+			</article>
 			<article class="rev-item-100">
                 <section class="rev-container-song">
                     <article class="rev-item-5">
@@ -162,82 +161,6 @@
                     
                 </section>
 			</article>
-			
-			<article class="rev-item-100">
-                <section class="rev-container-song">
-                    <article class="rev-item-5">
-                        <span class="glyphicon glyphicon-play"></span>
-                    </article>
-
-                    <article class="rev-item-30">
-                        <label>Test Song Title</label>
-                    </article>
-
-                    <article class="rev-item-30">
-                        <label>Test Song Artist</label>
-                    </article>
-
-                    <article class="rev-item-30">
-                        <label>Test Song Length</label>
-                    </article>
-
-                    <article class="rev-item-5">
-                        <span class="glyphicon glyphicon-plus"></span>
-                    </article>
-                    
-                </section>
-			</article>
-			
-			<article class="rev-item-100">
-                <section class="rev-container-song">
-                    <article class="rev-item-5">
-                        <span class="glyphicon glyphicon-play"></span>
-                    </article>
-
-                    <article class="rev-item-30">
-                        <label>Test Song Title</label>
-                    </article>
-
-                    <article class="rev-item-30">
-                        <label>Test Song Artist</label>
-                    </article>
-
-                    <article class="rev-item-30">
-                        <label>Test Song Length</label>
-                    </article>
-
-                    <article class="rev-item-5">
-                        <span class="glyphicon glyphicon-plus"></span>
-                    </article>
-                    
-                </section>
-			</article>
-			
-			<article class="rev-item-100">
-                <section class="rev-container-song">
-                    <article class="rev-item-5">
-                        <span class="glyphicon glyphicon-play"></span>
-                    </article>
-
-                    <article class="rev-item-30">
-                        <label>Test Song Title</label>
-                    </article>
-
-                    <article class="rev-item-30">
-                        <label>Test Song Artist</label>
-                    </article>
-
-                    <article class="rev-item-30">
-                        <label>Test Song Length</label>
-                    </article>
-
-                    <article class="rev-item-5">
-                        <span class="glyphicon glyphicon-plus"></span>
-                    </article>
-                    
-                </section>
-			</article>
-			
 			<article class="rev-item-100">
                 <section class="rev-container-song">
                     <article class="rev-item-5">
@@ -418,7 +341,7 @@
 
 				</section><!-- /intro__content -->
 			</header><!-- /intro -->
-			<section class="items-wrap">
+			<section class="rev-container">
 				<a href="#" class="item">
 					<img class="item__image" src="images/ice/1.jpg">
 					<h2 class="item__title">Sunny</h2></a>
@@ -438,7 +361,7 @@
 					<img class="item__image" src="images/ice/2.jpg">
 					<h2 class="item__title">Rainy</h2></a>
 			</section>
-		</div><!-- /container -->
+		</div><!-- /rev-container -->
 		<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 		<script  src="js/dotmenu.js"></script>
 		<script src="js/classie.js"></script>
