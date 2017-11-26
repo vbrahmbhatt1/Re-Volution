@@ -55,3 +55,14 @@ article span:hover {
     display: flex;
     width: 100%;
 }
+
+.rev-bottom {
+    position: absolute;
+    bottom: 0;
+}
+
+.rev-bottom-title {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 50px;
+}

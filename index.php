@@ -35,11 +35,11 @@
 				<section class="intro__content rev-basic-container">
 					<article class="rev-item-70">
 						<section class="rev-container-column">
-							<article class="rev-item-100">
+							<article class="rev-item-100 rev-bottom-title">
 								<h1 class="intro__title">Re-Volution</h1>
-							<article>
+                            </article>
 
-							<article class="rev-item-100">
+							<article class="rev-item-100 rev-bottom">
 								<div class="intro__subtitle">
 										<button class="trigger">
 										<svg width="100%" height="100%" viewBox="0 0 60 60" preserveAspectRatio="none">

@@ -149,8 +149,8 @@
 
 .item {
 	position: relative;
-	-webkit-flex: 1 0 25%;
-	flex: 1 0 25%;
+	-webkit-flex: 1 0 32%;
+	flex: 1 0 32%;
 	overflow: hidden;
 	height: 22vw;
 	outline: none;
