@@ -4,6 +4,7 @@ DROP TABLE IF EXISTS PlayList_t;
 DROP TABLE IF EXISTS Album_t;
 DROP TABLE IF EXISTS Genre_t;
 DROP TABLE IF EXISTS User_t;
+DROP TABLE IF EXISTS Artist_t;
 
 CREATE TABLE User_t (
     UserID int NOT NULL AUTO_INCREMENT,
@@ -107,3 +108,12 @@ INSERT INTO Album_t VALUES ('0', 'In Between Dreams', '05/27/2015', 12, 2);
 INSERT INTO Album_t VALUES ('0', 'Feel It Still', '11/16/2016', 12, 3);
 INSERT INTO Album_t VALUES ('0', 'A Song To Sing', '03/30/2017', 12, 5);
 
+CREATE TABLE Artist_t (
+    ArtistID int NOT NULL AUTO_INCREMENT,
+    ArtistName varchar(30),
+    PRIMARY KEY (ArtistID)
+);
+
+INSERT INTO Artist_t VALUES ('Taylor Swift');
+INSERT INTO Artist_t VALUES ('Justin Timberlake');
+INSERT INTO Artist_t VALUES ('Ke$ha');

@@ -1,4 +1,30 @@
 <!DOCTYPE html>
+<?php
+
+try
+{
+
+    $pdo = new PDO('mysql:host=localhost;dbname=revolution', 'root', '');
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo->exec('SET NAMES "utf8"');
+
+    $link = mysqli_connect("localhost", "root", "", "revolution");
+    $query = "SELECT song_t.Name, song_t.SongLengthSeconds, artist_t.ArtistName FROM song_t 
+    INNER JOIN artist_t on artist_t.ArtistID = song_t.ArtistID 
+    WHERE song_t.SongID IN (
+        SELECT playlistsongs_t.SongID from playlistsongs_t where playlistsongs_t.PlayListID = 2
+    )";
+    $songs = mysqli_query($link, $query);
+}
+catch (PDOException $e)
+{
+  $error = 'Unable to connect to the database server.';
+  include 'error.html.php';
+  exit();
+}
+
+?>
+
 <html lang="en" class="no-js">
 	<head>
 		<meta charset="UTF-8" />
@@ -12,7 +38,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	</head>
 	<body>
-		<div id="container" class="rev-container">
+		<div id="container" class="">
 			<header class="intro">
 				<img class="intro__image" src="images/1.jpg" >
 				<div class="window-container valign">
@@ -62,6 +88,7 @@
 
 					<article class="rev-item-30">
 						<section class="rev-container-column">
+        <?php foreach ($songs as $song): ?>                
             <article class="rev-item-100">
                 <section class="rev-container-song">
                     <article class="rev-item-5">
@@ -69,15 +96,15 @@
                     </article>
 
                     <article class="rev-item-30">
-                        <label>Test Song Title</label>
+                        <label> <?php echo $song['Name']; ?> </label>
                     </article>
 
                     <article class="rev-item-30">
-                        <label>Test Song Artist</label>
+                        <label> <?php echo $song['ArtistName']; ?> </label>
                     </article>
 
                     <article class="rev-item-30">
-                        <label>Test Song Length</label>
+                        <label> <?php echo $song['SongLengthSeconds']; ?> </label>
                     </article>
 
                     <article class="rev-item-5">
@@ -86,255 +113,7 @@
                     
                 </section>
             </article>
-
-
-            <article class="rev-item-100">
-                <section class="rev-container-song">
-                    <article class="rev-item-5">
-                        <span class="glyphicon glyphicon-play"></span>
-                    </article>
-
-                    <article class="rev-item-30">
-                        <label>Test Song Title</label>
-                    </article>
-
-                    <article class="rev-item-30">
-                        <label>Test Song Artist</label>
-                    </article>
-
-                    <article class="rev-item-30">
-                        <label>Test Song Length</label>
-                    </article>
-
-                    <article class="rev-item-5">
-                        <span class="glyphicon glyphicon-plus"></span>
-                    </article>
-                    
-                </section>
-            </article>
-
-            <article class="rev-item-100">
-                <section class="rev-container-song">
-                    <article class="rev-item-5">
-                        <span class="glyphicon glyphicon-play"></span>
-                    </article>
-
-                    <article class="rev-item-30">
-                        <label>Test Song Title</label>
-                    </article>
-
-                    <article class="rev-item-30">
-                        <label>Test Song Artist</label>
-                    </article>
-
-                    <article class="rev-item-30">
-                        <label>Test Song Length</label>
-                    </article>
-
-                    <article class="rev-item-5">
-                        <span class="glyphicon glyphicon-plus"></span>
-                    </article>
-                    
-                </section>
-			</article>
-			<article class="rev-item-100">
-                <section class="rev-container-song">
-                    <article class="rev-item-5">
-                        <span class="glyphicon glyphicon-play"></span>
-                    </article>
-
-                    <article class="rev-item-30">
-                        <label>Test Song Title</label>
-                    </article>
-
-                    <article class="rev-item-30">
-                        <label>Test Song Artist</label>
-                    </article>
-
-                    <article class="rev-item-30">
-                        <label>Test Song Length</label>
-                    </article>
-
-                    <article class="rev-item-5">
-                        <span class="glyphicon glyphicon-plus"></span>
-                    </article>
-                    
-                </section>
-			</article>
-			<article class="rev-item-100">
-                <section class="rev-container-song">
-                    <article class="rev-item-5">
-                        <span class="glyphicon glyphicon-play"></span>
-                    </article>
-
-                    <article class="rev-item-30">
-                        <label>Test Song Title</label>
-                    </article>
-
-                    <article class="rev-item-30">
-                        <label>Test Song Artist</label>
-                    </article>
-
-                    <article class="rev-item-30">
-                        <label>Test Song Length</label>
-                    </article>
-
-                    <article class="rev-item-5">
-                        <span class="glyphicon glyphicon-plus"></span>
-                    </article>
-                    
-                </section>
-			</article>
-			
-			<article class="rev-item-100">
-                <section class="rev-container-song">
-                    <article class="rev-item-5">
-                        <span class="glyphicon glyphicon-play"></span>
-                    </article>
-
-                    <article class="rev-item-30">
-                        <label>Test Song Title</label>
-                    </article>
-
-                    <article class="rev-item-30">
-                        <label>Test Song Artist</label>
-                    </article>
-
-                    <article class="rev-item-30">
-                        <label>Test Song Length</label>
-                    </article>
-
-                    <article class="rev-item-5">
-                        <span class="glyphicon glyphicon-plus"></span>
-                    </article>
-                    
-                </section>
-			</article>
-			
-			<article class="rev-item-100">
-                <section class="rev-container-song">
-                    <article class="rev-item-5">
-                        <span class="glyphicon glyphicon-play"></span>
-                    </article>
-
-                    <article class="rev-item-30">
-                        <label>Test Song Title</label>
-                    </article>
-
-                    <article class="rev-item-30">
-                        <label>Test Song Artist</label>
-                    </article>
-
-                    <article class="rev-item-30">
-                        <label>Test Song Length</label>
-                    </article>
-
-                    <article class="rev-item-5">
-                        <span class="glyphicon glyphicon-plus"></span>
-                    </article>
-                    
-                </section>
-			</article>
-			
-			<article class="rev-item-100">
-                <section class="rev-container-song">
-                    <article class="rev-item-5">
-                        <span class="glyphicon glyphicon-play"></span>
-                    </article>
-
-                    <article class="rev-item-30">
-                        <label>Test Song Title</label>
-                    </article>
-
-                    <article class="rev-item-30">
-                        <label>Test Song Artist</label>
-                    </article>
-
-                    <article class="rev-item-30">
-                        <label>Test Song Length</label>
-                    </article>
-
-                    <article class="rev-item-5">
-                        <span class="glyphicon glyphicon-plus"></span>
-                    </article>
-                    
-                </section>
-			</article>
-			
-			<article class="rev-item-100">
-                <section class="rev-container-song">
-                    <article class="rev-item-5">
-                        <span class="glyphicon glyphicon-play"></span>
-                    </article>
-
-                    <article class="rev-item-30">
-                        <label>Test Song Title</label>
-                    </article>
-
-                    <article class="rev-item-30">
-                        <label>Test Song Artist</label>
-                    </article>
-
-                    <article class="rev-item-30">
-                        <label>Test Song Length</label>
-                    </article>
-
-                    <article class="rev-item-5">
-                        <span class="glyphicon glyphicon-plus"></span>
-                    </article>
-                    
-                </section>
-			</article>
-			
-			<article class="rev-item-100">
-                <section class="rev-container-song">
-                    <article class="rev-item-5">
-                        <span class="glyphicon glyphicon-play"></span>
-                    </article>
-
-                    <article class="rev-item-30">
-                        <label>Test Song Title</label>
-                    </article>
-
-                    <article class="rev-item-30">
-                        <label>Test Song Artist</label>
-                    </article>
-
-                    <article class="rev-item-30">
-                        <label>Test Song Length</label>
-                    </article>
-
-                    <article class="rev-item-5">
-                        <span class="glyphicon glyphicon-plus"></span>
-                    </article>
-                    
-                </section>
-            </article>
-
-            <article class="rev-item-100">
-                <section class="rev-container-song">
-                    <article class="rev-item-5">
-                        <span class="glyphicon glyphicon-play"></span>
-                    </article>
-
-                    <article class="rev-item-30">
-                        <label>Test Song Title</label>
-                    </article>
-
-                    <article class="rev-item-30">
-                        <label>Test Song Artist</label>
-                    </article>
-
-                    <article class="rev-item-30">
-                        <label>Test Song Length</label>
-                    </article>
-
-                    <article class="rev-item-5">
-                        <span class="glyphicon glyphicon-plus"></span>
-                    </article>
-                    
-                </section>
-            </article>
+        <?php endforeach; ?>
 
         </section>
 					</article>
