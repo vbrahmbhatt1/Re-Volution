@@ -114,13 +114,17 @@ catch (PDOException $e)
                 </section>
             </article>
         <?php endforeach; ?>
-
+            <article class="rev-item-100">
+                <audio controls style="width:100%;">
+                    <source src="horse.ogg" type="audio/ogg">
+                </audio>
+            </article>
         </section>
 					</article>
 
 				</section><!-- /intro__content -->
 			</header><!-- /intro -->
-			<section class="rev-container">
+			<section class="items-wrap">
 				<a href="#" class="item">
 					<img class="item__image" src="images/ice/1.jpg">
 					<h2 class="item__title">Sunny</h2></a>
@@ -138,7 +142,17 @@ catch (PDOException $e)
 					<h2 class="item__title">Windy</h2></a>
 				<a href="#" class="item">
 					<img class="item__image" src="images/ice/2.jpg">
-					<h2 class="item__title">Rainy</h2></a>
+                    <h2 class="item__title">Rainy</h2></a>
+                <a href="#" class="item">
+					<img class="item__image" src="images/ice/2.jpg">
+                    <h2 class="item__title">Custom 1</h2></a>
+                <a href="#" class="item">
+					<img class="item__image" src="images/ice/2.jpg">
+                    <h2 class="item__title">Custom 2</h2></a>
+                <a href="#" class="item">
+					<img class="item__image" src="images/ice/2.jpg">
+					<h2 class="item__title">Custom 3</h2></a>
+
 			</section>
 		</div><!-- /rev-container -->
 		<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
