@@ -1,53 +1,53 @@
+<?php
+
+session_start();
+
+if( isset($_SESSION['user_id']) ){
+	header("Location: index.php");
+}
+
+require 'database.php';
+
+if(!empty($_POST['email']) && !empty($_POST['password'])):
+
+	$bids = $conn->prepare('SELECT id,email,password FROM users WHERE email = :email');
+	$bids->bindParam(':email', $_POST['email']);
+	$bids->execute();
+	$results = $bids->fetch(PDO::FETCH_ASSOC); //store the results, fetch the results
+
+  $message = '';
+
+  if(count($results) > 0 && password_verify($_POST['password'], $results['password'])){
+    $_SESSION['user_id'] = $results['id'];
+		header("Location: index.php");
+
+	} else {
+		$message = 'Error: Login failure';
+	}
+
+endif;
+ ?>
+
+
 <!DOCTYPE html>
-<html >
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Sign-Up/Login Form</title>
-  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="css/login.css">
+  <title>Please Login</title>
+  <link rel="stylesheet" type="text/css" href="css/login.scss">
+<link href='http://fonts.googleapis.com/css?family=Papyrus' rel='stylesheet' type='text/css'>
 </head>
 <body>
-  <div class="form">
-      <ul class="tab-group">
-        <li class="tab active"><a href="#signup">Sign Up</a></li>
-        <li class="tab"><a href="#login">Log In</a></li></ul>
-      <div class="tab-content">
-        <div id="signup">
-          <form action="/" method="post">
-            <div class="field-wrap">
-              <label>Username<span class="req">*</span></label>
-              <input type="text"required autocomplete="off"/>
-          </div>
-          <div class="field-wrap">
-            <label>Email<span class="req">*</span></label>
-            <input type="email"required autocomplete="off"/>
-          </div>
-          <div class="field-wrap">
-            <label>Password<span class="req">*</span></label>
-            <input type="password"required autocomplete="off"/>
-          </div>
-          <button type="submit" class="button button-block"/>Lets go!</button>
-          </form>
-        </div>
-        <div id="login">
-          <h1>Hi There!</h1>
-          <form action="/" method="post">
-            <div class="field-wrap">
-            <label>Username<span class="req">*</span></label>
-            <input type="email"required autocomplete="off"/>
-          </div>
-          <div class="field-wrap">
-            <label>Password<span class="req">*</span></label>
-            <input type="password"required autocomplete="off"/>
-          </div>
-          <p class="forgot"><a href="#">Forgot Password?</a></p>
-          <button class="button button-block"/>Let Me In!</button>
-          </form>
-        </div>
-      </div><!-- tab-content -->
-</div> <!-- /form -->
-<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script  src="js/login.js"></script>
+	<h1>Login</h1>
+	<a href="register.php">Register Here!</a>
+  <form action="login.php" method="POST">
+		<input type="text" placeholder="Your Email Please" name="email">
+		<input type="password" placeholder="Password" name="password">
+		<input type="submit">
+	</form>
+
+	<?php if(!empty($message)): ?>
+		<p><?= $message ?></p>
+	<?php endif; ?>
+
 </body>
 </html>

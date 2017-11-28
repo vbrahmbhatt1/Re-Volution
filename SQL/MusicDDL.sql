@@ -6,13 +6,10 @@ DROP TABLE IF EXISTS Genre_t;
 DROP TABLE IF EXISTS User_t;
 DROP TABLE IF EXISTS Artist_t;
 
-CREATE TABLE User_t (
+CREATE TABLE users(
     UserID int NOT NULL AUTO_INCREMENT,
-    FirstName varchar(30),
-    LastName varchar(30),
-    DateOfBirth varchar(15),
-    Email varchar(50),
-    Password varchar(20),
+    Email varchar(100),
+    Password varchar(100),
     PRIMARY KEY (UserID)
 );
 

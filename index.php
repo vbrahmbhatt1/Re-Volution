@@ -1,27 +1,25 @@
 <!DOCTYPE html>
 <?php
 
-try
-{
+session_start();
 
-    $pdo = new PDO('mysql:host=localhost;dbname=revolution', 'root', '');
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $pdo->exec('SET NAMES "utf8"');
+require 'database.php';
 
-    $link = mysqli_connect("localhost", "root", "", "revolution");
-    $query = "SELECT song_t.Name, song_t.SongLengthSeconds, artist_t.ArtistName FROM song_t 
-    INNER JOIN artist_t on artist_t.ArtistID = song_t.ArtistID 
-    WHERE song_t.SongID IN (
-        SELECT playlistsongs_t.SongID from playlistsongs_t where playlistsongs_t.PlayListID = 2
-    )";
-    $songs = mysqli_query($link, $query);
+if( isset($_SESSION['user_id']) ){
+
+	$records = $conn->prepare('SELECT id,email,password FROM users WHERE id = :id');
+	$records->bindParam(':id', $_SESSION['user_id']);
+	$records->execute();
+	$results = $records->fetch(PDO::FETCH_ASSOC);
+
+	$user = NULL;
+
+	if( count($results) > 0){
+		$user = $results;
+	}
+
 }
-catch (PDOException $e)
-{
-  $error = 'Unable to connect to the database server.';
-  include 'error.html.php';
-  exit();
-}
+
 
 ?>
 
@@ -49,11 +47,11 @@ catch (PDOException $e)
 						<span class="bottom"></span>
 						<span class="bottom2"></span>
 					</div>
-
 					<div id="overlay" class="overlay">
 						<div class="overlay-menu">
 							<ul>
 								<li><a href="login.php" target="_blank">Login In</a></li>
+                <li><a href="register.php" target="_blank">Register</a></li>
 								<li><a href="about.php" target="_blank">About Us</a></li></ul>
 							</div>
 						</div>
@@ -63,8 +61,7 @@ catch (PDOException $e)
 						<section class="rev-container-column">
 							<article class="rev-item-100 rev-bottom-title">
 								<h1 class="intro__title">Re-Volution</h1>
-                            </article>
-
+              </article>
 							<article class="rev-item-100 rev-bottom">
 								<div class="intro__subtitle">
 										<button class="trigger">
@@ -85,46 +82,9 @@ catch (PDOException $e)
 							</article>
 						</section>
 					</article>
-
-					<article class="rev-item-30">
-						<section class="rev-container-column">
-        <?php foreach ($songs as $song): ?>                
-            <article class="rev-item-100">
-                <section class="rev-container-song">
-                    <article class="rev-item-5">
-                        <span class="glyphicon glyphicon-play"></span>
-                    </article>
-
-                    <article class="rev-item-30">
-                        <label> <?php echo $song['Name']; ?> </label>
-                    </article>
-
-                    <article class="rev-item-30">
-                        <label> <?php echo $song['ArtistName']; ?> </label>
-                    </article>
-
-                    <article class="rev-item-30">
-                        <label> <?php echo $song['SongLengthSeconds']; ?> </label>
-                    </article>
-
-                    <article class="rev-item-5">
-                        <span class="glyphicon glyphicon-plus"></span>
-                    </article>
-                    
-                </section>
-            </article>
-        <?php endforeach; ?>
-            <article class="rev-item-100">
-                <audio controls style="width:100%;">
-                    <source src="horse.ogg" type="audio/ogg">
-                </audio>
-            </article>
-        </section>
-					</article>
-
 				</section><!-- /intro__content -->
 			</header><!-- /intro -->
-			<section class="items-wrap">
+			<section class="rev-container">
 				<a href="#" class="item">
 					<img class="item__image" src="images/ice/1.jpg">
 					<h2 class="item__title">Sunny</h2></a>
@@ -142,17 +102,7 @@ catch (PDOException $e)
 					<h2 class="item__title">Windy</h2></a>
 				<a href="#" class="item">
 					<img class="item__image" src="images/ice/2.jpg">
-                    <h2 class="item__title">Rainy</h2></a>
-                <a href="#" class="item">
-					<img class="item__image" src="images/ice/2.jpg">
-                    <h2 class="item__title">Custom 1</h2></a>
-                <a href="#" class="item">
-					<img class="item__image" src="images/ice/2.jpg">
-                    <h2 class="item__title">Custom 2</h2></a>
-                <a href="#" class="item">
-					<img class="item__image" src="images/ice/2.jpg">
-					<h2 class="item__title">Custom 3</h2></a>
-
+					<h2 class="item__title">Rainy</h2></a>
 			</section>
 		</div><!-- /rev-container -->
 		<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
