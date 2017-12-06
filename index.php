@@ -12,7 +12,7 @@ try
     $query = "SELECT song_t.Name, song_t.SongLengthSeconds, song_t.Link, artist_t.ArtistName FROM song_t 
     INNER JOIN artist_t on artist_t.ArtistID = song_t.ArtistID 
     WHERE song_t.SongID IN (
-        SELECT playlistsongs_t.SongID from playlistsongs_t where playlistsongs_t.PlayListID = 2
+        SELECT playlistsongs_t.SongID from playlistsongs_t where playlistsongs_t.PlayListID = 4
     )";
     $songs = mysqli_query($link, $query);
 }
