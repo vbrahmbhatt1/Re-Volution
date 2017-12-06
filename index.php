@@ -9,7 +9,7 @@ try
     $pdo->exec('SET NAMES "utf8"');
 
     $link = mysqli_connect("localhost", "root", "", "revolution");
-    $query = "SELECT song_t.Name, song_t.SongLengthSeconds, artist_t.ArtistName FROM song_t 
+    $query = "SELECT song_t.Name, song_t.SongLengthSeconds, song_t.Link, artist_t.ArtistName FROM song_t 
     INNER JOIN artist_t on artist_t.ArtistID = song_t.ArtistID 
     WHERE song_t.SongID IN (
         SELECT playlistsongs_t.SongID from playlistsongs_t where playlistsongs_t.PlayListID = 2
@@ -35,6 +35,8 @@ catch (PDOException $e)
 		<link rel="stylesheet" type="text/css" href="css/layout-simple.css" />
 		<link rel="stylesheet" type="text/css" href="css/dotmenu.css" />
 		<link rel="stylesheet" type="text/css" href="css/revolution.css"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script type="text/javascript" src="./scripts.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	</head>
 	<body>
@@ -89,9 +91,9 @@ catch (PDOException $e)
 					<article class="rev-item-30">
 						<section class="rev-container-column">
         <?php foreach ($songs as $song): ?>                
-            <article class="rev-item-100">
+            <article class="rev-item-100" >
                 <section class="rev-container-song">
-                    <article class="rev-item-5">
+                    <article class="rev-item-5" onclick="playsong(this)" data-value="<?php echo $song['Link'] ?>">
                         <span class="glyphicon glyphicon-play"></span>
                     </article>
 
@@ -107,6 +109,8 @@ catch (PDOException $e)
                         <label> <?php echo $song['SongLengthSeconds']; ?> </label>
                     </article>
 
+					<article id="songlocation"></article>
+
                     <article class="rev-item-5">
                         <span class="glyphicon glyphicon-plus"></span>
                     </article>
@@ -115,8 +119,8 @@ catch (PDOException $e)
             </article>
         <?php endforeach; ?>
             <article class="rev-item-100">
-                <audio controls style="width:100%;">
-                    <source src="horse.ogg" type="audio/ogg">
+                <audio id="player" controls style="width:100%;">
+                    <source id="playsong" src="./music/Katy_Perry-The_One_That_Got_Away.mp3" type="audio/ogg">
                 </audio>
             </article>
         </section>
