@@ -1,16 +1,15 @@
-<!DOCTYPE html>
 <?php
 
 try
 {
 
-    $pdo = new PDO('mysql:host=localhost;dbname=revolution', 'root', '');
+    $pdo = new PDO('mysql:host=localhost;dbname=king_music', 'king', '7Jj8bQbCmVd2nVkw');
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->exec('SET NAMES "utf8"');
 
-    $link = mysqli_connect("localhost", "root", "", "revolution");
-    $query = "SELECT song_t.Name, song_t.SongLengthSeconds, song_t.Link, artist_t.ArtistName FROM song_t 
-    INNER JOIN artist_t on artist_t.ArtistID = song_t.ArtistID 
+    $link = mysqli_connect("localhost", "king", "7Jj8bQbCmVd2nVkw", "king_music");
+    $query = "SELECT song_t.Name, song_t.SongLengthSeconds, song_t.Link, artist_t.ArtistName FROM song_t
+    INNER JOIN artist_t on artist_t.ArtistID = song_t.ArtistID
     WHERE song_t.SongID IN (
         SELECT playlistsongs_t.SongID from playlistsongs_t where playlistsongs_t.PlayListID = 4
     )";
@@ -25,6 +24,7 @@ catch (PDOException $e)
 
 ?>
 
+<!DOCTYPE html>
 <html lang="en" class="no-js">
 	<head>
 		<meta charset="UTF-8" />
@@ -36,7 +36,7 @@ catch (PDOException $e)
 		<link rel="stylesheet" type="text/css" href="css/dotmenu.css" />
 		<link rel="stylesheet" type="text/css" href="css/revolution.css"/>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script type="text/javascript" src="./scripts.js"></script>
+		<script type="text/javascript" src="./js/scripts.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	</head>
 	<body>
@@ -51,12 +51,11 @@ catch (PDOException $e)
 						<span class="bottom"></span>
 						<span class="bottom2"></span>
 					</div>
-
 					<div id="overlay" class="overlay">
 						<div class="overlay-menu">
 							<ul>
-								<li><a href="login.php" target="_blank">Login In</a></li>
-								<li><a href="about.php" target="_blank">About Us</a></li></ul>
+                <li><a href="login.php" target="_blank">Login In</a></li>
+                <li><a href="register.php" target="_blank">Register</a></li>
 							</div>
 						</div>
 					</div>
@@ -65,8 +64,7 @@ catch (PDOException $e)
 						<section class="rev-container-column">
 							<article class="rev-item-100 rev-bottom-title">
 								<h1 class="intro__title">Re-Volution</h1>
-                            </article>
-
+              </article>
 							<article class="rev-item-100 rev-bottom">
 								<div class="intro__subtitle">
 										<button class="trigger">
@@ -87,10 +85,9 @@ catch (PDOException $e)
 							</article>
 						</section>
 					</article>
-
 					<article class="rev-item-30">
 						<section class="rev-container-column">
-        <?php foreach ($songs as $song): ?>                
+        <?php foreach ($songs as $song): ?>
             <article class="rev-item-100" >
                 <section class="rev-container-song">
                     <article class="rev-item-5" onclick="playsong(this)" data-value="<?php echo $song['Link'] ?>">
@@ -114,13 +111,13 @@ catch (PDOException $e)
                     <article class="rev-item-5">
                         <span class="glyphicon glyphicon-plus"></span>
                     </article>
-                    
+
                 </section>
             </article>
         <?php endforeach; ?>
             <article class="rev-item-100">
                 <audio id="player" controls style="width:100%;">
-                    <source id="playsong" src="./music/Katy_Perry-The_One_That_Got_Away.mp3" type="audio/ogg">
+                    <source id="playsong" src="./music/Boston-More_Than_A_Feeling.mp3" type="audio/ogg">
                 </audio>
             </article>
         </section>
