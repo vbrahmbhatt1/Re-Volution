@@ -31,6 +31,11 @@
     width: 28%;
 }
 
+.rev-item-40 {
+    flex-grow: 1;
+    width: 38%;
+}
+
 .rev-item-50 {
     flex-grow: 1;
     width: 52%;

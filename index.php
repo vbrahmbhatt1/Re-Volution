@@ -132,7 +132,7 @@ catch (PDOException $e)
 
                 <a href="#" class="item">
 					<img class="item__image" src="images/ice/2.jpg">
-                    <h2 onclick="changePlaylist(this)" class="item__title">Custom 1</h2></a>
+                    <h2 onclick="changePlaylist(this)" name="7" class="item__title">All Songs</h2></a>
 			
 			<a href="#" class="item">
 				<img class="item__image" src="images/ice/2.jpg">

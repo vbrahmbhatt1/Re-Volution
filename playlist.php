@@ -10,8 +10,9 @@ try
     $pdo->exec('SET NAMES "utf8"');
 
     $link = mysqli_connect("localhost", "root", "", "revolution");
-    $query = "SELECT song_t.Name, song_t.SongLengthSeconds, song_t.Link, artist_t.ArtistName FROM song_t 
+    $query = "SELECT song_t.Name, song_t.SongLengthSeconds, song_t.Link, artist_t.ArtistName, song_t.SongID, playlistsongs_t.PlayListID FROM song_t 
     INNER JOIN artist_t on artist_t.ArtistID = song_t.ArtistID 
+    INNER JOIN playlistsongs_t on playlistsongs_t.SongID = song_t.SongID
     WHERE song_t.SongID IN (
         SELECT playlistsongs_t.SongID from playlistsongs_t where playlistsongs_t.PlayListID =". $weather .
     ")";
@@ -25,6 +26,7 @@ try
     }
     $firstitem = true;
     $numsongsresult = mysqli_fetch_assoc($numofsongs);
+    $deleteString = "test";
 }
 catch (PDOException $e)
 {
@@ -54,19 +56,19 @@ catch (PDOException $e)
             </article>
         <?php $firstitem=false; endif; ?>
 
-            <article name="playlistsong" class="rev-item-30">
+            <article name="playlistsong" class="rev-item-50">
                 <label> <?php echo $song['Name']; ?> </label>
             </article>
 
-            <article name="playlistsong" class="rev-item-30">
+            <article name="playlistsong" class="rev-item-50">
                 <label> <?php echo $song['ArtistName']; ?> </label>
             </article>
 
             <article name="playlistsong" class="rev-item-30">
                 <label> <?php echo $song['SongLengthSeconds']; ?> </label>
             </article>
-
-            <article name="playlistsong" class="rev-item-5 rev-minus">
+            <?php $deleteString = "try this" ?>
+            <article name="playlistsong" class="rev-item-5 rev-minus" onclick="deleteSongfromPlaylist(<?php $deleteString ?>)">
                 <span class="glyphicon glyphicon-minus"></span>
             </article>
 
