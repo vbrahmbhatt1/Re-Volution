@@ -18,7 +18,7 @@ try
     }
 
     $pdo->commit();
-    echo "New playlist created"
+    echo "New playlist created";
 
 catch (PDOException $e)
 {
