@@ -17,7 +17,6 @@ function changePlaylist(element) {
         type:"POST",
         data: {weather: element.getAttribute("name")},
         success: function(data){
-            console.log(data);
             $("article[name=playlistsong]").remove();
             $("#playlistcontainer").prepend(data);
 
@@ -33,10 +32,17 @@ function changePlaylist(element) {
     });
 }
 
-function deleteSongfromPlaylist(){
-    
+function deleteSongfromPlaylist(playlistID, songID){
+    $.ajax({
+        url:"delete.php",
+        type:"POST",
+        data: {deleteplaylist: playlistID, deletesong: songID},
+        success: function(){
+            changeplaylist(document.getElementById("deletePlaylist"));
+        }
+    });
 }
 
-function addSongtoPlaylist(){
+// function addSongtoPlaylist(){
 
-}
+// }

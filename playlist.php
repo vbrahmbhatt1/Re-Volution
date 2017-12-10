@@ -15,7 +15,7 @@ try
     INNER JOIN playlistsongs_t on playlistsongs_t.SongID = song_t.SongID
     WHERE song_t.SongID IN (
         SELECT playlistsongs_t.SongID from playlistsongs_t where playlistsongs_t.PlayListID =". $weather .
-    ")";
+    ")" . "AND playlistsongs_t.PlayListID=" . $weather;
     
     $numofsongsslq = "SELECT COUNT(*) as totalsongs FROM playlistsongs_t where playlistsongs_t.PlaylistID = " . $weather . ";";
     $songs = [];
@@ -67,9 +67,9 @@ catch (PDOException $e)
             <article name="playlistsong" class="rev-item-30">
                 <label> <?php echo $song['SongLengthSeconds']; ?> </label>
             </article>
-            <?php $deleteString = "try this" ?>
-            <article name="playlistsong" class="rev-item-5 rev-minus" onclick="deleteSongfromPlaylist(<?php $deleteString ?>)">
-                <span class="glyphicon glyphicon-minus"></span>
+            <?php $deleteString = $song['PlayListID'] . "," . $song['SongID'];?>
+            <article name="playlistsong" class="rev-item-5 rev-minus">
+                <span id="deletePlaylist" class="glyphicon glyphicon-minus" name="<?php echo $song['PlayListID'] ?>" onclick="deleteSongfromPlaylist(<?php echo $deleteString ?>)"></span>
             </article>
 
             <article name="playlistsong" class="rev-item-5 rev-plus">
