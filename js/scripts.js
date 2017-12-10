@@ -32,3 +32,11 @@ function changePlaylist(element) {
         }
     });
 }
+
+function deleteSongfromPlaylist(){
+    
+}
+
+function addSongtoPlaylist(){
+
+}

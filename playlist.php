@@ -14,12 +14,17 @@ try
     INNER JOIN artist_t on artist_t.ArtistID = song_t.ArtistID 
     WHERE song_t.SongID IN (
         SELECT playlistsongs_t.SongID from playlistsongs_t where playlistsongs_t.PlayListID =". $weather .
-	")";
-	$songs = [];
+    ")";
+    
+    $numofsongsslq = "SELECT COUNT(*) as totalsongs FROM playlistsongs_t where playlistsongs_t.PlaylistID = " . $weather . ";";
+    $songs = [];
+    $numofsongs = 0;
 	if (isset($weather)){
-		$songs = mysqli_query($link, $query);
+        $songs = mysqli_query($link, $query);
+        $numofsongs = mysqli_query($link, $numofsongsslq);
     }
     $firstitem = true;
+    $numsongsresult = mysqli_fetch_assoc($numofsongs);
 }
 catch (PDOException $e)
 {
@@ -29,18 +34,22 @@ catch (PDOException $e)
 }
 
 ?>
+<article name="playlistsong" class="rev-item-100">
+    <span>This playlist has <?php echo $numsongsresult["totalsongs"]?> songs</span>
+</article>
 
+</article>
 <?php foreach ($songs as $song): ?>
     <article class="rev-item-100" >
         <section class="rev-container-song" name="playlistsong">
         <?php if ($firstitem) : ?>
-            <article name="playlistsong" id="firstItem" class="rev-item-5" onclick="playsong(this)" data-value="<?php echo $song['Link'] ?>">
+            <article name="playlistsong" id="firstItem" class="rev-item-5 rev-plus" onclick="playsong(this)" data-value="<?php echo $song['Link'] ?>">
                 <span class="glyphicon glyphicon-play"></span>
             </article>
         <?php endif; ?>
 
         <?php if (!$firstitem) : ?>
-            <article name="playlistsong" class="rev-item-5" onclick="playsong(this)" data-value="<?php echo $song['Link'] ?>">
+            <article name="playlistsong" class="rev-item-5 rev-plus" onclick="playsong(this)" data-value="<?php echo $song['Link'] ?>">
                 <span class="glyphicon glyphicon-play"></span>
             </article>
         <?php $firstitem=false; endif; ?>
@@ -57,9 +66,11 @@ catch (PDOException $e)
                 <label> <?php echo $song['SongLengthSeconds']; ?> </label>
             </article>
 
-            <article id="songlocation"></article>
+            <article name="playlistsong" class="rev-item-5 rev-minus">
+                <span class="glyphicon glyphicon-minus"></span>
+            </article>
 
-            <article name="playlistsong" class="rev-item-5">
+            <article name="playlistsong" class="rev-item-5 rev-plus">
                 <span class="glyphicon glyphicon-plus"></span>
             </article>
             <?php $firstitem=false; ?>

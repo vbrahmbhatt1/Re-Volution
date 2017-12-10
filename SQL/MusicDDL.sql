@@ -14,6 +14,13 @@ CREATE TABLE User_t(
     PRIMARY KEY (UserID)
 );
 
+INSERT INTO User_t VALUES ('0', 'Andrew', 'arohrer@luc.edu', 'test1234');
+INSERT INTO User_t VALUES ('0', 'Valay', 'vbrahmbhatt@luc.edu', 'test1234');
+INSERT INTO User_t VALUES ('0', 'John', 'jDoe@luc.edu', 'test1234');
+INSERT INTO User_t VALUES ('0', 'Jane', 'jDoe2@luc.edu', 'test1234');
+INSERT INTO User_t VALUES ('0', 'Jimmy', 'jspruce@luc.edu', 'test1234');
+INSERT INTO User_t VALUES ('0', 'Hilda', 'hjenkins@luc.edu', 'test1234');
+
 CREATE TABLE Song_t (
     SongID int NOT NULL AUTO_INCREMENT,
     Name varchar(30),
@@ -119,6 +126,35 @@ INSERT INTO PlayListSongs_t VALUES ('6', '2');
 INSERT INTO PlayListSongs_t VALUES ('6', '18');
 INSERT INTO PlayListSongs_t VALUES ('6', '25');
 INSERT INTO PlayListSongs_t VALUES ('6', '24');
+
+INSERT INTO PlayListSongs_t VALUES ('7', '1');
+INSERT INTO PlayListSongs_t VALUES ('7', '2');
+INSERT INTO PlayListSongs_t VALUES ('7', '3');
+INSERT INTO PlayListSongs_t VALUES ('7', '4');
+INSERT INTO PlayListSongs_t VALUES ('7', '5');
+INSERT INTO PlayListSongs_t VALUES ('7', '6');
+INSERT INTO PlayListSongs_t VALUES ('7', '7');
+INSERT INTO PlayListSongs_t VALUES ('7', '8');
+INSERT INTO PlayListSongs_t VALUES ('7', '9');
+INSERT INTO PlayListSongs_t VALUES ('7', '10');
+INSERT INTO PlayListSongs_t VALUES ('7', '11');
+INSERT INTO PlayListSongs_t VALUES ('7', '12');
+INSERT INTO PlayListSongs_t VALUES ('7', '13');
+INSERT INTO PlayListSongs_t VALUES ('7', '14');
+INSERT INTO PlayListSongs_t VALUES ('7', '15');
+INSERT INTO PlayListSongs_t VALUES ('7', '16');
+INSERT INTO PlayListSongs_t VALUES ('7', '17');
+INSERT INTO PlayListSongs_t VALUES ('7', '18');
+INSERT INTO PlayListSongs_t VALUES ('7', '19');
+INSERT INTO PlayListSongs_t VALUES ('7', '20');
+INSERT INTO PlayListSongs_t VALUES ('7', '21');
+INSERT INTO PlayListSongs_t VALUES ('7', '22');
+INSERT INTO PlayListSongs_t VALUES ('7', '23');
+INSERT INTO PlayListSongs_t VALUES ('7', '24');
+INSERT INTO PlayListSongs_t VALUES ('7', '25');
+INSERT INTO PlayListSongs_t VALUES ('7', '26');
+INSERT INTO PlayListSongs_t VALUES ('7', '27');
+INSERT INTO PlayListSongs_t VALUES ('7', '28');
 
 CREATE TABLE Genre_t (
     GenreID int NOT NULL AUTO_INCREMENT,

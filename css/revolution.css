@@ -47,8 +47,12 @@
 }
 /*flexbox code end*/
 
-article span:hover {
-    color:green;
+.rev-plus:hover {
+    color:darkgreen;
+}
+
+.rev-minus:hover {
+    color: red;
 }
 
 .rev-basic-container {
