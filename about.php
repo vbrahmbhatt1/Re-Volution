@@ -1,3 +1,16 @@
+<?php
+
+include('database.php');
+
+	if (!isset($_SESSION['username'])) {
+		header('location: login.php');
+	}
+	if (array_key_exists("logout", $_GET)){
+		session_destroy();
+		unset($_SESSION['username']);
+		header("location: login.php");
+	}?>
+
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 	<head>
@@ -14,6 +27,25 @@
 			<header class="intro">
 				<img class="intro__image" src="images/2.jpg" >
 				<div class="intro__content">
+
+
+
+					<?php if (isset($_SESSION['success'])) : ?>
+						<div class="error success" class="intro__title">
+							<?php
+								echo $_SESSION['success'];
+								unset($_SESSION['success']);
+								?>
+						</div>
+					<?php endif ?>
+					<?php  if (isset($_SESSION['username'])) : ?>
+						Welcome To Re-Volution<strong>
+							<?php echo $_SESSION['username']; ?></strong>
+						<p><a href="about.php?logout='1'">Let me out!</a></p>
+						<?php endif ?>
+
+
+
 					<h1 class="intro__title">About Us</h1>
 					<div class="intro__subtitle">
 							<button class="trigger">
@@ -49,10 +81,13 @@
 					So, sit back, relax, and enjoy!
 				</p>
 				<h3>The Vision</h3>
-				<p style="margin-top:-15px;">To enhance consumers' music experience and create value through data-driven technology."</p>
+				<p style="margin-top:-15px;">To enhance consumers' music experience and create value through data-driven technology.</p>
 				<h3>The Motto</h3>
 				<p style="margin-top:-15px;">Just Enjoy It!</p></a>
 		</section>
+		<div class="footer">
+			<center><a href="index.php">Home</a></center>
+	</div>
 	</div>
 		<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script  src="js/dotmenu.js"></script>

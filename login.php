@@ -1,53 +1,27 @@
+<?php
+include('database.php')
+?>
 <!DOCTYPE html>
-<html >
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Sign-Up/Login Form</title>
-  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="css/login.css">
+	<title>Music Giant Login</title>
+	<link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
 <body>
-  <div class="form">
-      <ul class="tab-group">
-        <li class="tab active"><a href="#signup">Sign Up</a></li>
-        <li class="tab"><a href="#login">Log In</a></li></ul>
-      <div class="tab-content">
-        <div id="signup">
-          <form action="/" method="post">
-            <div class="field-wrap">
-              <label>Username<span class="req">*</span></label>
-              <input type="text"required autocomplete="off"/>
-          </div>
-          <div class="field-wrap">
-            <label>Email<span class="req">*</span></label>
-            <input type="email"required autocomplete="off"/>
-          </div>
-          <div class="field-wrap">
-            <label>Password<span class="req">*</span></label>
-            <input type="password"required autocomplete="off"/>
-          </div>
-          <button type="submit" class="button button-block"/>Lets go!</button>
-          </form>
-        </div>
-        <div id="login">
-          <h1>Hi There!</h1>
-          <form action="/" method="post">
-            <div class="field-wrap">
-            <label>Username<span class="req">*</span></label>
-            <input type="email"required autocomplete="off"/>
-          </div>
-          <div class="field-wrap">
-            <label>Password<span class="req">*</span></label>
-            <input type="password"required autocomplete="off"/>
-          </div>
-          <p class="forgot"><a href="#">Forgot Password?</a></p>
-          <button class="button button-block"/>Let Me In!</button>
-          </form>
-        </div>
-      </div><!-- tab-content -->
-</div> <!-- /form -->
-<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script  src="js/login.js"></script>
+	<div class="header">
+		<h2>Login</h2></div>
+	<form method="post" action="login.php">
+		<?php include('error1.php');?>
+		<div class="input-group">
+			<input type="text" placeholder="Username" name="username" >
+		</div>
+		<div class="input-group">
+			<input type="password" placeholder="Password" name="password">
+		</div>
+		<div class="input-group">
+			<button type="submit" class="button" name="login_user">Let's go!</button>
+		</div>
+		<p>Become a member? <p><a href="register.php">Sign up Here!</a></p></p>
+	</form>
 </body>
 </html>
