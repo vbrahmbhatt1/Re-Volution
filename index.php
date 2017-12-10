@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <?php
+error_reporting(E_ALL ^ E_NOTICE); 
+
+$weather=$_POST['weather'];
 
 try
 {
@@ -12,9 +15,12 @@ try
     $query = "SELECT song_t.Name, song_t.SongLengthSeconds, song_t.Link, artist_t.ArtistName FROM song_t 
     INNER JOIN artist_t on artist_t.ArtistID = song_t.ArtistID 
     WHERE song_t.SongID IN (
-        SELECT playlistsongs_t.SongID from playlistsongs_t where playlistsongs_t.PlayListID = 4
-    )";
-    $songs = mysqli_query($link, $query);
+        SELECT playlistsongs_t.SongID from playlistsongs_t where playlistsongs_t.PlayListID = $weather
+	)";
+	$songs = [];
+	if (isset($weather)){
+		$songs = mysqli_query($link, $query);
+	}
 }
 catch (PDOException $e)
 {
@@ -120,7 +126,7 @@ catch (PDOException $e)
         <?php endforeach; ?>
             <article class="rev-item-100">
                 <audio id="player" controls style="width:100%;">
-                    <source id="playsong" src="./music/Katy_Perry-The_One_That_Got_Away.mp3" type="audio/ogg">
+                    <source id="playsong" src="" type="audio/ogg">
                 </audio>
             </article>
         </section>
@@ -129,33 +135,69 @@ catch (PDOException $e)
 				</section><!-- /intro__content -->
 			</header><!-- /intro -->
 			<section class="items-wrap">
+			
 				<a href="#" class="item">
-					<img class="item__image" src="images/ice/1.jpg">
+				<form action="index.php" method="post">
+					<input type="image" class="item__image" src="images/ice/1.jpg" name="weather" value="1">
 					<h2 class="item__title">Sunny</h2></a>
+			
+			</form>
+
+			<form action="index.php" method="post">
 				<a href="#" class="item">
 					<img class="item__image" src="images/ice/5.jpg">
 					<h2 class="item__title">Gloomy</h2></a>
+					<input type="hidden" name="weather" value="2">
+			</form>
+
+			<form action="index.php" method="post">
 				<a href="#" class="item">
 					<img class="item__image" src="images/ice/3.jpg">
 					<h2 class="item__title">Snowy</h2></a>
+					<input type="hidden" name="weather" value="3">
+			</form>
+
+			<form action="index.php" method="post">
 				<a href="#" class="item">
 					<img class="item__image" src="images/ice/6.jpg">
 					<h2 class="item__title">Icy</h2></a>
+					<input type="hidden" name="weather" value="4">
+			</form>
+
+			<form action="index.php" method="post">
 				<a href="#" class="item">
 					<img class="item__image" src="images/ice/4.jpg">
 					<h2 class="item__title">Windy</h2></a>
+					<input type="hidden" name="weather" value="5">
+			</form>
+
+			<form action="index.php" method="post">
 				<a href="#" class="item">
 					<img class="item__image" src="images/ice/2.jpg">
                     <h2 class="item__title">Rainy</h2></a>
+					<input type="hidden" name="weather" value="6">
+			</form>
+
+			<form action="index.php" method="post">
                 <a href="#" class="item">
 					<img class="item__image" src="images/ice/2.jpg">
                     <h2 class="item__title">Custom 1</h2></a>
+					<input type="hidden" name="weather" value="1">
+			</form>
+			
+			<form action="index.php" method="post">
+			<a href="#" class="item">
+				<img class="item__image" src="images/ice/2.jpg">
+				<h2 class="item__title">Custom 2</h2></a>
+				<input type="hidden" name="weather" value="1">
+			</form>
+
+			<form action="index.php" method="post">
                 <a href="#" class="item">
 					<img class="item__image" src="images/ice/2.jpg">
-                    <h2 class="item__title">Custom 2</h2></a>
-                <a href="#" class="item">
-					<img class="item__image" src="images/ice/2.jpg">
-					<h2 class="item__title">Custom 3</h2></a>
+                    <h2 class="item__title">Custom 3</h2></a>
+					<input type="hidden" name="weather" value="1">
+			</form>
 
 			</section>
 		</div><!-- /rev-container -->
