@@ -10,7 +10,7 @@
 	$email    = "";
 
 	//connect to MySQL
-	$MySQL = mysqli_connect('localhost', 'king', '7Jj8bQbCmVd2nVkw', 'king_music');
+	$MySQL = mysqli_connect('localhost', 'root', '', 'revolution');
 
 	//Check connection
 	if (mysqli_connect_errno()){

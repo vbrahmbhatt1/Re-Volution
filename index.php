@@ -5,7 +5,7 @@ $weather=$_POST['weather'];
 
 try
 {
-
+	echo "<script>console.log( 'Debug Objects: " . $weather . "' );</script>";
     $pdo = new PDO('mysql:host=localhost;dbname=revolution', 'root', '');
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->exec('SET NAMES "utf8"');
@@ -14,7 +14,7 @@ try
     $query = "SELECT song_t.Name, song_t.SongLengthSeconds, song_t.Link, artist_t.ArtistName FROM song_t 
     INNER JOIN artist_t on artist_t.ArtistID = song_t.ArtistID 
     WHERE song_t.SongID IN (
-        SELECT playlistsongs_t.SongID from playlistsongs_t where playlistsongs_t.PlayListID = $weather
+        SELECT playlistsongs_t.SongID from playlistsongs_t where playlistsongs_t.PlayListID =. $weather.
 	)";
 	$songs = [];
 	if (isset($weather)){
@@ -140,7 +140,9 @@ catch (PDOException $e)
 				<a href="#" class="item">
 					<img class="item__image" src="images/ice/5.jpg">
 					<h2 class="item__title">Gloomy</h2></a>
+					<form action="" method="POST">
 					<input type="hidden" name="weather" value="2">
+					</form>
 
 				<a href="#" class="item">
 					<img class="item__image" src="images/ice/3.jpg">
@@ -150,7 +152,9 @@ catch (PDOException $e)
 				<a href="#" class="item">
 					<img class="item__image" src="images/ice/6.jpg">
 					<h2 class="item__title">Icy</h2></a>
+					<form action="" method="POST">
 					<input type="hidden" name="weather" value="4">
+					</form>
 
 				<a href="#" class="item">
 					<img class="item__image" src="images/ice/4.jpg">
