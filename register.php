@@ -15,22 +15,22 @@ include('database.php')
 	<form method="post" action="register.php">
 		<?php include('error1.php'); ?>
 		<div class="input-group">
-			<input type="text" name="username" placeholder="Username" value="<?php echo $username; ?>">
+			<input type="text" name="username" style="color: red" placeholder="Username" value="<?php echo $username; ?>">
 		</div>
 		<div class="input-group">
-			<input type="email" name="email" placeholder="Email" value="<?php echo $email; ?>">
+			<input type="email" name="email" style="color: red" placeholder="Email" value="<?php echo $email; ?>">
 		</div>
 		<div class="input-group">
-			<input type="password" placeholder="Password"name="password_1">
+			<input type="password" style="color: red" placeholder="Password"name="password_1">
 		</div>
 		<div class="input-group">
-			<input type="password" placeholder="Confirm password"name="password_2">
+			<input type="password" style="color: red" placeholder="Confirm password"name="password_2">
 		</div>
 		<div class="input-group">
 			<button type="submit" class="button" name="reg_user">Click Me!</button>
 		</div>
-		<p>
-			Been here before? <p><a href="login.php">Sign in</a><p>
+		<p style="color: white">
+			Been here before? <p><a href="login.php" style="color: white;">Sign in</a><p>
 		</p>
 	</form>
 </body>

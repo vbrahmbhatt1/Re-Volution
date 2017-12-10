@@ -1,5 +1,7 @@
+
 body{
 	background: #D3D3D3;
+	background-image: "images/3.jpg";
 	color:black;
 	margin:0px;
 	padding:0px;
@@ -20,7 +22,7 @@ body{
 }
 
 form, .content {
-  background: #404040;
+  background: #202020;
   padding: 40px;
   max-width: 375px;
   margin: 40px auto;
