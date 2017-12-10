@@ -14,8 +14,8 @@ try
     $query = "SELECT song_t.Name, song_t.SongLengthSeconds, song_t.Link, artist_t.ArtistName FROM song_t 
     INNER JOIN artist_t on artist_t.ArtistID = song_t.ArtistID 
     WHERE song_t.SongID IN (
-        SELECT playlistsongs_t.SongID from playlistsongs_t where playlistsongs_t.PlayListID =. $weather.
-	)";
+        SELECT playlistsongs_t.SongID from playlistsongs_t where playlistsongs_t.PlayListID=" . $weather .
+	")";
 	$songs = [];
 	if (isset($weather)){
 		$songs = mysqli_query($link, $query);
@@ -92,96 +92,57 @@ catch (PDOException $e)
 						</section>
 					</article>
 					<article class="rev-item-30">
-						<section class="rev-container-column">
-        <?php foreach ($songs as $song): ?>
-            <article class="rev-item-100" >
-                <section class="rev-container-song">
-                    <article class="rev-item-5" onclick="playsong(this)" data-value="<?php echo $song['Link'] ?>">
-                        <span class="glyphicon glyphicon-play"></span>
-                    </article>
+						<section id="playlistcontainer" class="rev-container-column">
 
-                    <article class="rev-item-30">
-                        <label> <?php echo $song['Name']; ?> </label>
-                    </article>
-
-                    <article class="rev-item-30">
-                        <label> <?php echo $song['ArtistName']; ?> </label>
-                    </article>
-
-                    <article class="rev-item-30">
-                        <label> <?php echo $song['SongLengthSeconds']; ?> </label>
-                    </article>
-
-					<article id="songlocation"></article>
-
-                    <article class="rev-item-5">
-                        <span class="glyphicon glyphicon-plus"></span>
-                    </article>
-
-                </section>
-            </article>
-        <?php endforeach; ?>
-            <article class="rev-item-100">
-                <audio id="player" controls style="width:100%;">
-                    <source id="playsong" src="" type="audio/ogg">
-                </audio>
-            </article>
-        </section>
+							<article class="rev-item-100">
+								<audio id="player" controls style="width:100%;">
+									<source id="playsong" src="" type="audio/ogg">
+								</audio>
+							</article>
+						</section>
 					</article>
 
 				</section><!-- /intro__content -->
 			</header><!-- /intro -->
-			<section class="items-wrap">
+			<form class="items-wrap" action="index.php" method="POST">
 			
 				<a href="#" class="item">
 					<input type="image" class="item__image" src="images/ice/1.jpg" name="weather" value="1">
-					<h2 class="item__title">Sunny</h2></a>
+					<h2 onclick="changePlaylist(this)" class="item__title" name="1">Sunny</h2></a>
 			
 				<a href="#" class="item">
 					<img class="item__image" src="images/ice/5.jpg">
-					<h2 class="item__title">Gloomy</h2></a>
-					<form action="" method="POST">
-					<input type="hidden" name="weather" value="2">
-					</form>
+					<h2 onclick="changePlaylist(this)" name="2" class="item__title">Gloomy</h2></a>
 
 				<a href="#" class="item">
 					<img class="item__image" src="images/ice/3.jpg">
-					<h2 class="item__title">Snowy</h2></a>
-					<input type="hidden" name="weather" value="3">
+					<h2 onclick="changePlaylist(this)" name="3" class="item__title">Snowy</h2></a>
 
 				<a href="#" class="item">
 					<img class="item__image" src="images/ice/6.jpg">
-					<h2 class="item__title">Icy</h2></a>
-					<form action="" method="POST">
-					<input type="hidden" name="weather" value="4">
-					</form>
+					<h2 onclick="changePlaylist(this)" name="4" class="item__title">Icy</h2></a>
 
 				<a href="#" class="item">
 					<img class="item__image" src="images/ice/4.jpg">
-					<h2 class="item__title">Windy</h2></a>
-					<input type="hidden" name="weather" value="5">
+					<h2 onclick="changePlaylist(this)" name="5" class="item__title">Windy</h2></a>
 
 				<a href="#" class="item">
 					<img class="item__image" src="images/ice/2.jpg">
-                    <h2 class="item__title">Rainy</h2></a>
-					<input type="hidden" name="weather" value="6">
+                    <h2 onclick="changePlaylist(this)" name="6" class="item__title">Rainy</h2></a>
 
                 <a href="#" class="item">
 					<img class="item__image" src="images/ice/2.jpg">
-                    <h2 class="item__title">Custom 1</h2></a>
-					<input type="hidden" name="weather" value="1">
+                    <h2 onclick="changePlaylist(this)" class="item__title">Custom 1</h2></a>
 			
 			<a href="#" class="item">
 				<img class="item__image" src="images/ice/2.jpg">
-				<h2 class="item__title">Custom 2</h2></a>
-				<input type="hidden" name="weather" value="1">
+				<h2 onclick="changePlaylist(this)" class="item__title">Custom 2</h2></a>
 
                 <a href="#" class="item">
 					<img class="item__image" src="images/ice/2.jpg">
-                    <h2 class="item__title">Custom 3</h2></a>
-					<input type="hidden" name="weather" value="1">
+                    <h2 onclick="changePlaylist(this)" class="item__title">Custom 3</h2></a>
 
-			</section>
+			</form>
 		</div><!-- /rev-container -->
 		<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 		<script  src="js/dotmenu.js"></script>
