@@ -73,18 +73,19 @@ catch (PDOException $e)
             </article>
 
             <article name="playlistsong" class="rev-item-5 rev-plus">
-                <span class="glyphicon glyphicon-plus"></span>
+                <div class="glyphicon glyphicon-plus rev-dropdown" onclick="genDropDown()">
+                    <div id="playlistDropDown" class="rev-dropdown-content">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                    </div>
+                </div>
             </article>
             <?php $firstitem=false; ?>
         </section>
     </article>
 <?php endforeach; ?>
 
-<div class="dropdown">
-  <button class="dropbtn">Dropdown</button>
-  <div class="dropdown-content">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
-  </div>
+<div class="rev-dropdown">
+  
 </div> 
