@@ -17,11 +17,15 @@ try
         SELECT playlistsongs_t.SongID from playlistsongs_t where playlistsongs_t.PlayListID =". $weather .
     ")" . "AND playlistsongs_t.PlayListID=" . $weather;
     
+    $playlistquery = "SELECT PlayListID, PlayListName FROM playlist_t;";
+
     $numofsongsslq = "SELECT COUNT(*) as totalsongs FROM playlistsongs_t where playlistsongs_t.PlaylistID = " . $weather . ";";
     $songs = [];
+    $playlists = [];
     $numofsongs = 0;
 	if (isset($weather)){
         $songs = mysqli_query($link, $query);
+        $playlists = mysqli_query($link, $playlistquery);
         $numofsongs = mysqli_query($link, $numofsongsslq);
     }
     $firstitem = true;
@@ -75,9 +79,9 @@ catch (PDOException $e)
             <article name="playlistsong" class="rev-item-5 rev-plus">
                 <div class="glyphicon glyphicon-plus rev-dropdown" onclick="genDropDown()">
                     <div id="playlistDropDown" class="rev-dropdown-content">
-                        <a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a>
+                        <?php foreach ($playlists as $playlist): ?>
+                            <a name="<?php $playlist['PlayListID'] ?>, <?php $song['SongID'] ?>"><?php $playlist['PlayListName'] ?></a>
+                        <?php endforeach; ?>
                     </div>
                 </div>
             </article>
