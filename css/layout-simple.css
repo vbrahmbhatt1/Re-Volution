@@ -52,7 +52,8 @@
 	margin: 0 0 20px;
 	font-weight: 900;
 	font-size: 4em;
-	font-family: "Playfair Display", Georgia, serif;
+	font-family: 'Papyrus', sans-serif;
+	color: black;
 	line-height: 1;
 }
 
@@ -184,7 +185,7 @@
 	padding: 1em;
 	color: #dbdbdb;
 	font-size: 1.85em;
-	font-family: "Playfair Display", Georgia, serif;
+	font-family: 'Papyrus', sans-serif;
 	line-height: 1;
 	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
 	transition: transform 0.3s, opacity 0.3s;

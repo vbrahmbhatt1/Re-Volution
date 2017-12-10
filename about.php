@@ -17,7 +17,7 @@ include('database.php');
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Re-Volution</title>
+		<title>About Re-Volution</title>
 		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 		<link rel="stylesheet" type="text/css" href="css/layout-simple.css" />
 		<link rel="stylesheet" type="text/css" href="css/about.css" />
@@ -29,9 +29,9 @@ include('database.php');
 				<div class="intro__content">
 
 
-
+					<div class="absolute">
 					<?php if (isset($_SESSION['success'])) : ?>
-						<div class="error success" class="intro__title">
+						<div class="error success">
 							<?php
 								echo $_SESSION['success'];
 								unset($_SESSION['success']);
@@ -39,10 +39,11 @@ include('database.php');
 						</div>
 					<?php endif ?>
 					<?php  if (isset($_SESSION['username'])) : ?>
-						Welcome To Re-Volution<strong>
-							<?php echo $_SESSION['username']; ?></strong>
-						<p><a href="about.php?logout='1'">Let me out!</a></p>
-						<?php endif ?>
+						<h2>Welcome To Re-Volution
+						<strong> <?php echo $_SESSION['username']; ?></strong>!
+						<p><a href="about.php?logout='1'" style="color: black;">Exit Here!</a></p>
+					<?php endif ?></h2>
+				</div>
 
 
 
@@ -67,7 +68,8 @@ include('database.php');
 			</header><!-- /intro -->
 		<section class="items-wrap">
 			<a>
-				<p>
+				<h4>Who Are We?</h4>
+				<p style="margin-top:-15px;">
 					Re-Volution is the go to place for your music. This web application has the music you are looking for any type of weather.
 					We are trying to answer question: how can we appreciate music better?
 					The better mood we’re in the better the music sounds.
@@ -80,10 +82,10 @@ include('database.php');
 					we have come up pre-loaded playlist and the option to customize each playlist.
 					So, sit back, relax, and enjoy!
 				</p>
-				<h3>The Vision</h3>
+				<h4 style="margin-top:-15px;">The Vision</h4>
 				<p style="margin-top:-15px;">To enhance consumers' music experience and create value through data-driven technology.</p>
-				<h3>The Motto</h3>
-				<p style="margin-top:-15px;">Just Enjoy It!</p></a>
+				<h4>The Motto</h4>
+				<p style="margin-top:-15px;">Just Chill!</p></a>
 		</section>
 		<div class="footer">
 			<center><a href="index.php">Home</a></center>

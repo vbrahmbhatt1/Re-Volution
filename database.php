@@ -28,7 +28,6 @@
 		$email = mysqli_real_escape_string($MySQL, $_POST['email']);
 		$hash = password_hash($_POST['password_1'], PASSWORD_BCRYPT);
 
-
 		// check all the fields
 		//array_push treat array like stack and push the pased variables to the
 		//end of the array
@@ -43,7 +42,6 @@
 			$mysql_query = "INSERT INTO User_t (username, email, password)
 					  VALUES('$username', '$email', '$hash')";
 			mysqli_query($MySQL, $mysql_query);
-
 			$_SESSION['username'] = $username;
 			$_SESSION['success'] = "Registered successfully, you also logged in";
 			header('location: about.php');
