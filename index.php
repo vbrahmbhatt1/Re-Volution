@@ -6,7 +6,7 @@ $weather=$_POST['weather'];
 try
 {
 
-    $pdo = new PDO('mysql:host=localhost;dbname=king_music', 'king', '7Jj8bQbCmVd2nVkw');
+    $pdo = new PDO('mysql:host=localhost;dbname=revolution', 'root', '');
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->exec('SET NAMES "utf8"');
 
@@ -24,7 +24,7 @@ try
 catch (PDOException $e)
 {
   $error = 'Unable to connect to the database server.';
-  include 'error.html.php';
+  include 'error1.php';
   exit();
 }
 
@@ -134,67 +134,48 @@ catch (PDOException $e)
 			<section class="items-wrap">
 			
 				<a href="#" class="item">
-				<form action="index.php" method="post">
 					<input type="image" class="item__image" src="images/ice/1.jpg" name="weather" value="1">
 					<h2 class="item__title">Sunny</h2></a>
 			
-			</form>
-
-			<form action="index.php" method="post">
 				<a href="#" class="item">
 					<img class="item__image" src="images/ice/5.jpg">
 					<h2 class="item__title">Gloomy</h2></a>
 					<input type="hidden" name="weather" value="2">
-			</form>
 
-			<form action="index.php" method="post">
 				<a href="#" class="item">
 					<img class="item__image" src="images/ice/3.jpg">
 					<h2 class="item__title">Snowy</h2></a>
 					<input type="hidden" name="weather" value="3">
-			</form>
 
-			<form action="index.php" method="post">
 				<a href="#" class="item">
 					<img class="item__image" src="images/ice/6.jpg">
 					<h2 class="item__title">Icy</h2></a>
 					<input type="hidden" name="weather" value="4">
-			</form>
 
-			<form action="index.php" method="post">
 				<a href="#" class="item">
 					<img class="item__image" src="images/ice/4.jpg">
 					<h2 class="item__title">Windy</h2></a>
 					<input type="hidden" name="weather" value="5">
-			</form>
 
-			<form action="index.php" method="post">
 				<a href="#" class="item">
 					<img class="item__image" src="images/ice/2.jpg">
                     <h2 class="item__title">Rainy</h2></a>
 					<input type="hidden" name="weather" value="6">
-			</form>
 
-			<form action="index.php" method="post">
                 <a href="#" class="item">
 					<img class="item__image" src="images/ice/2.jpg">
                     <h2 class="item__title">Custom 1</h2></a>
 					<input type="hidden" name="weather" value="1">
-			</form>
 			
-			<form action="index.php" method="post">
 			<a href="#" class="item">
 				<img class="item__image" src="images/ice/2.jpg">
 				<h2 class="item__title">Custom 2</h2></a>
 				<input type="hidden" name="weather" value="1">
-			</form>
 
-			<form action="index.php" method="post">
                 <a href="#" class="item">
 					<img class="item__image" src="images/ice/2.jpg">
                     <h2 class="item__title">Custom 3</h2></a>
 					<input type="hidden" name="weather" value="1">
-			</form>
 
 			</section>
 		</div><!-- /rev-container -->
