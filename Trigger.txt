@@ -1,0 +1,19 @@
+delimiter //
+CREATE TRIGGER delete_from_PlayList_t
+AFTER INSERT
+ON PlayListSongs_t
+FOR EACH ROW
+BEGIN
+DELETE FROM PlayList_t
+WHERE PlayList_t.`PlayListID`= NEW.PlayListID;
+END;//
+delimiter;
+
+delimiter //
+CREATE TRIGGER update_PlayList_t_name
+BEFORE UPDATE ON PlayList_t
+FOR EACH ROW
+BEGIN
+SET NEW.PlayListName = NOW();
+END;//
+delimiter;

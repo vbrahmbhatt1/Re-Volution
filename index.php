@@ -1,23 +1,23 @@
 <?php
-error_reporting(E_ALL ^ E_NOTICE); 
+error_reporting(E_ALL ^ E_NOTICE);
 
 $weather=$_POST['weather'];
 
-try
+try 
 {
 	echo "<script>console.log( 'Debug Objects: " . $weather . "' );</script>";
-    $pdo = new PDO('mysql:host=localhost;dbname=revolution', 'root', '');
+    $pdo = new PDO('mysql:host=localhost;dbname=king_music', 'king', '7Jj8bQbCmVd2nVkw');
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->exec('SET NAMES "utf8"');
 
-    $link = mysqli_connect("localhost", "root", "", "revolution");
-    $query = "SELECT song_t.Name, song_t.SongLengthSeconds, song_t.Link, artist_t.ArtistName, song_t.SongID, playlistsongs_t.PlayListID FROM song_t 
-    INNER JOIN artist_t on artist_t.ArtistID = song_t.ArtistID 
+    $link = mysqli_connect("localhost", "king", "7Jj8bQbCmVd2nVkw", "king_music");
+    $query = "SELECT song_t.Name, song_t.SongLengthSeconds, song_t.Link, artist_t.ArtistName, song_t.SongID, playlistsongs_t.PlayListID FROM song_t
+    INNER JOIN artist_t on artist_t.ArtistID = song_t.ArtistID
     INNER JOIN playlistsongs_t on playlistsongs_t.SongID = song_t.SongID
     WHERE song_t.SongID IN (
         SELECT playlistsongs_t.SongID from playlistsongs_t where playlistsongs_t.PlayListID =". $weather .
 	")" . "AND playlistsongs_t.PlayListID=" . $weather;
-	
+
 	$songs = [];
 	if (isset($weather)){
 		$songs = mysqli_query($link, $query);
@@ -107,11 +107,11 @@ catch (PDOException $e)
 				</section><!-- /intro__content -->
 			</header><!-- /intro -->
 			<form class="items-wrap" action="index.php" method="POST">
-			
+
 				<a href="#" class="item">
 					<input type="image" class="item__image" src="images/ice/1.jpg" name="weather" value="1">
 					<h2 onclick="changePlaylist(this)" class="item__title" name="1">Sunny</h2></a>
-			
+
 				<a href="#" class="item">
 					<img class="item__image" src="images/ice/5.jpg">
 					<h2 onclick="changePlaylist(this)" name="2" class="item__title">Gloomy</h2></a>
@@ -135,7 +135,7 @@ catch (PDOException $e)
                 <a href="#" class="item">
 					<img class="item__image" src="images/ice/2.jpg">
                     <h2 onclick="changePlaylist(this)" name="7" class="item__title">All Songs</h2></a>
-			
+
 			<a href="#" class="item">
 				<img class="item__image" src="images/ice/2.jpg">
 				<h2 onclick="changePlaylist(this)" class="item__title">Custom 2</h2></a>

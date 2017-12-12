@@ -9,7 +9,8 @@ include('database.php');
 		session_destroy();
 		unset($_SESSION['username']);
 		header("location: login.php");
-	}?>
+	}
+	?>
 
 <!DOCTYPE html>
 <html lang="en" class="no-js">
@@ -38,7 +39,8 @@ include('database.php');
 								?>
 						</div>
 					<?php endif ?>
-					<?php  if (isset($_SESSION['username'])) : ?>
+					<?php
+					if (isset($_SESSION['username'])) : ?>
 						<h2>Welcome To Re-Volution
 						<strong> <?php echo $_SESSION['username']; ?></strong>!
 						<p><a href="about.php?logout='1'" style="color: black;">Exit Here!</a></p>

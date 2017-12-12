@@ -10,7 +10,7 @@
 	$email    = "";
 
 	//connect to MySQL
-	$MySQL = mysqli_connect('localhost', 'root', '', 'revolution');
+	$MySQL = mysqli_connect('localhost', 'king', '7Jj8bQbCmVd2nVkw', 'king_music');
 
 	//Check connection
 	if (mysqli_connect_errno()){
@@ -26,6 +26,7 @@
 		$username = mysqli_real_escape_string($MySQL, $_POST['username']);
 		$password2 = mysqli_real_escape_string($MySQL, $_POST['password_2']);
 		$email = mysqli_real_escape_string($MySQL, $_POST['email']);
+		$admin = mysqli_real_escape_string($MySQL, $_POST['admin']);
 		$hash = password_hash($_POST['password_1'], PASSWORD_BCRYPT);
 
 		// check all the fields
@@ -47,7 +48,18 @@
 			header('location: about.php');
 		}}
 
-	// LOGIN USER
+/*
+		if($_SESSION['admin'] == $admin){
+			header("Location: about.php");
+			echo "You are now an Admin";
+		}
+		else{
+			header("Location: register.php");
+			echo "Register!";
+		}
+*/
+
+	//user login
 	if (isset($_POST['login_user'])) {
 		$username = mysqli_real_escape_string($MySQL, $_POST['username']);
 		$password1 = mysqli_real_escape_string($MySQL, $_POST['password']);
@@ -62,5 +74,10 @@
 			if (count($results) == 1) {
 				$_SESSION['username'] = $username;
 				$_SESSION['success'] = "Logged In";
-				header('location: about.php');}
-			else {array_push($error1, "Incorrect username or password");}}}?>
+				header('location: about.php');
+			}
+			else {array_push($error1, "Incorrect username and/or password");
+			}
+		}
+	}
+	?>

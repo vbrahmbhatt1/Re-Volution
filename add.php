@@ -6,10 +6,10 @@ try
 {
     echo "<script>console.log( 'Debug Objects: " . $playlistID . " " . $songID . "' );</script>";
     echo "<script>console.log( 'Debug Objects: delete reached' );</script>";
-    $pdo = new PDO('mysql:host=localhost;dbname=revolution', 'root', '');
+    $pdo = new PDO('mysql:host=localhost;dbname=king_music', 'king', '7Jj8bQbCmVd2nVkw');
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->exec('SET NAMES "utf8"');
-    $link = mysqli_connect("localhost", "root", "", "revolution");
+    $link = mysqli_connect("localhost", "king", "king_music", "7Jj8bQbCmVd2nVkw");
 
     $pdo->beginTransaction();
     if (isset($playlistID) && issset($songID)){

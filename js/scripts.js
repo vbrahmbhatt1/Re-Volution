@@ -39,8 +39,10 @@ function deleteSongfromPlaylist(playlistID, songID){
         //send the playlist ID and song ID to delete.php so it knows what record to delete.
         data: {deleteplaylist: playlistID, deletesong: songID},
         success: function(){
-            //repopulate the current playlist in the UI but since the record has been deleted from the database that song shouldn't show up in the playlist anymore.
-            changeplaylist(document.getElementById("deletePlaylist"));
+            //repopulate the current playlist in the UI but since
+            //the record has been deleted from the database
+            //that song shouldn't show up in the playlist anymore.
+            changePlaylist(document.getElementById("deletePlaylist"));
         }
     });
 }
@@ -51,12 +53,12 @@ function addSongtoPlaylist(){
         type:"POST",
         data: {addplaylist: playlistID, deletesong: songID},
         success: function(){
-            changeplaylist(document.getElementById("deletePlaylist"));
+            changePlaylist(document.getElementById("deletePlaylist"));
         }
     });
 }
 
-/* When the user clicks on the button, 
+/* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
 function genDropDown() {
     document.getElementById("playlistDropDown").classList.toggle("show");

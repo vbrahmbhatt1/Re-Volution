@@ -14,13 +14,6 @@ CREATE TABLE User_t(
     PRIMARY KEY (UserID)
 );
 
-INSERT INTO User_t VALUES ('0', 'Andrew', 'arohrer@luc.edu', 'test1234');
-INSERT INTO User_t VALUES ('0', 'Valay', 'vbrahmbhatt@luc.edu', 'test1234');
-INSERT INTO User_t VALUES ('0', 'John', 'jDoe@luc.edu', 'test1234');
-INSERT INTO User_t VALUES ('0', 'Jane', 'jDoe2@luc.edu', 'test1234');
-INSERT INTO User_t VALUES ('0', 'Jimmy', 'jspruce@luc.edu', 'test1234');
-INSERT INTO User_t VALUES ('0', 'Hilda', 'hjenkins@luc.edu', 'test1234');
-
 CREATE TABLE Song_t (
     SongID int NOT NULL AUTO_INCREMENT,
     Name varchar(30),
@@ -32,34 +25,34 @@ CREATE TABLE Song_t (
     PRIMARY KEY (SongID)
 );
 -- PK, Song Title, Song length seconds, AlbumID, GenreID, ArtistID, Link
-INSERT INTO Song_t VALUES ('0', 'Stayin Alive', '180', '1', '6', '3', './music/Bee_Gees-Stayin_Alive.mp3');
-INSERT INTO Song_t VALUES ('0', 'More Than A Feeling', '180', '1', '6', '1', './music/Boston-More_Than_A_Feeling.mp3');
-INSERT INTO Song_t VALUES ('0', 'Just the Way You Are', '180', '1', '3', '2', './music/Bruno_Mars-Just_The_Way_You_Are.mp3');
-INSERT INTO Song_t VALUES ('0', 'Call Me Maybe', '180', '1', '3', '22', './music/Carly_Rae_Jepsen-Call_Me_Maybe.mp3');
-INSERT INTO Song_t VALUES ('0', 'Let it Snow', '180', '1', '1', '23', './music/Dean_Martin-Let_it_Snow.mp3');
-INSERT INTO Song_t VALUES ('0', 'Perfect', '180', '1', '1', '24', './music/Ed_Sheeran-Perfect.mp3');
-INSERT INTO Song_t VALUES ('0', 'Carry On Wayward Son', '180', '1', '1', '25', './music/Kansas-Carry_On_Wayward_Son.mp3');
+INSERT INTO Song_t VALUES ('0', 'Stayin Alive', '180', '1', '6', '3', 'music/Bee_Gees-Stayin_Alive.mp3');
+INSERT INTO Song_t VALUES ('0', 'More Than A Feeling', '180', '1', '6', '1', 'music/Boston-More_Than_A_Feeling.mp3');
+INSERT INTO Song_t VALUES ('0', 'Just the Way You Are', '180', '1', '3', '2', 'music/Bruno_Mars-Just_The_Way_You_Are.mp3');
+INSERT INTO Song_t VALUES ('0', 'Call Me Maybe', '180', '1', '3', '22', 'music/Carly_Rae_Jepsen-Call_Me_Maybe.mp3');
+INSERT INTO Song_t VALUES ('0', 'Let it Snow', '180', '1', '1', '23', 'music/Dean_Martin-Let_it_Snow.mp3');
+INSERT INTO Song_t VALUES ('0', 'Perfect', '180', '1', '1', '24', 'music/Ed_Sheeran-Perfect.mp3');
+INSERT INTO Song_t VALUES ('0', 'Carry On Wayward Son', '180', '1', '1', '25', 'music/Kansas-Carry_On_Wayward_Son.mp3');
 INSERT INTO Song_t VALUES ('0', 'The One that Got Away', '180', '1', '1', '26', './music/Katy_Perry-The_One_That_Got_Away.mp3');
-INSERT INTO Song_t VALUES ('0', 'Blow', '180', '1', '1', '4', './music/Keha-Blow.mp3');
-INSERT INTO Song_t VALUES ('0', 'A World Alone', '180', '1', '1', '5', './music/Lorde-A_World_Alone.mp3');
-INSERT INTO Song_t VALUES ('0', 'Frozen', '180', '1', '1', '6', './music/Madonna-Frozen.mp3');
-INSERT INTO Song_t VALUES ('0', 'All I Want For Christmas', '180', '1', '1', '7', './music/Mariah_Carey-All_I_Want_For_Christmas.mp3');
-INSERT INTO Song_t VALUES ('0', 'Numb', '180', '1', '1', '8', './music/Numb-Linkin_Park.mp3');
-INSERT INTO Song_t VALUES ('0', 'Wonderwall', '180', '1', '1', '9', './music/Oasis-Wonderwall.mp3');
-INSERT INTO Song_t VALUES ('0', 'Let Her Go', '180', '1', '1', '10', './music/Passenger-Let_Her_Go.mp3');
-INSERT INTO Song_t VALUES ('0', 'Fire and Ice', '180', '1', '1', '11', './music/Pat_Benatar-Fire_And_Ice.mp3');
-INSERT INTO Song_t VALUES ('0', 'Happy', '180', '1', '1', '12', './music/Pharrell_Williams-Happy.mp3');
-INSERT INTO Song_t VALUES ('0', 'Bohemian Rhapsody', '180', '1', '1', '27', './music/Queen-Bohemian_Rhapsody.mp3');
-INSERT INTO Song_t VALUES ('0', 'Snow', '180', '1', '1', '13', './music/Red_Hot_Chili_Peppers-Snow.mp3');
-INSERT INTO Song_t VALUES ('0', 'Never Gonna Give You Up', '180', '1', '1', '14', './music/Rick_Astley-Never_Gonna_Give_You_Up.mp3');
-INSERT INTO Song_t VALUES ('0', 'Eye of the Tiger', '180', '1', '6', '15', './music/Survivor-Eye_Of_The_Tiger.mp3');
-INSERT INTO Song_t VALUES ('0', 'Lions Den', '180', '1', '1', '16', './music/Teminite_PsoGnar-Lions_Den.mp3');
-INSERT INTO Song_t VALUES ('0', 'Hazy Shade of Winter', '180', '1', '6', '17', './music/The_Bangles-Hazy_Shade_of_Winter.mp3');
-INSERT INTO Song_t VALUES ('0', 'Here Comes the Sun', '180', '1', '1', '18', './music/The_Beatles-Here_Comes_The_Sun.mp3');
-INSERT INTO Song_t VALUES ('0', 'Hey Jude', '180', '1', '1', '18', './music/The_Beatles-Hey_Jude.mp3');
-INSERT INTO Song_t VALUES ('0', 'Africa', '180', '1', '1', '19', './music/Toto-Africa.mp3');
-INSERT INTO Song_t VALUES ('0', 'Hey Soul Sister', '180', '1', '1', '20', './music/Train-Hey_Soul_Sister.mp3');
-INSERT INTO Song_t VALUES ('0', 'Ice Ice Baby', '180', '1', '1', '21', './music/Vanilla_Ice-Ice_Ice_Baby.mp3');
+INSERT INTO Song_t VALUES ('0', 'Blow', '180', '1', '1', '4', 'music/Keha-Blow.mp3');
+INSERT INTO Song_t VALUES ('0', 'A World Alone', '180', '1', '1', '5', 'music/Lorde-A_World_Alone.mp3');
+INSERT INTO Song_t VALUES ('0', 'Frozen', '180', '1', '1', '6', 'music/Madonna-Frozen.mp3');
+INSERT INTO Song_t VALUES ('0', 'All I Want For Christmas', '180', '1', '1', '7', 'music/Mariah_Carey-All_I_Want_For_Christmas.mp3');
+INSERT INTO Song_t VALUES ('0', 'Numb', '180', '1', '1', '8', 'music/Numb-Linkin_Park.mp3');
+INSERT INTO Song_t VALUES ('0', 'Wonderwall', '180', '1', '1', '9', 'music/Oasis-Wonderwall.mp3');
+INSERT INTO Song_t VALUES ('0', 'Let Her Go', '180', '1', '1', '10', 'music/Passenger-Let_Her_Go.mp3');
+INSERT INTO Song_t VALUES ('0', 'Fire and Ice', '180', '1', '1', '11', 'music/Pat_Benatar-Fire_And_Ice.mp3');
+INSERT INTO Song_t VALUES ('0', 'Happy', '180', '1', '1', '12', 'music/Pharrell_Williams-Happy.mp3');
+INSERT INTO Song_t VALUES ('0', 'Bohemian Rhapsody', '180', '1', '1', '27', 'music/Queen-Bohemian_Rhapsody.mp3');
+INSERT INTO Song_t VALUES ('0', 'Snow', '180', '1', '1', '13', 'music/Red_Hot_Chili_Peppers-Snow.mp3');
+INSERT INTO Song_t VALUES ('0', 'Never Gonna Give You Up', '180', '1', '1', '14', 'music/Rick_Astley-Never_Gonna_Give_You_Up.mp3');
+INSERT INTO Song_t VALUES ('0', 'Eye of the Tiger', '180', '1', '6', '15', 'music/Survivor-Eye_Of_The_Tiger.mp3');
+INSERT INTO Song_t VALUES ('0', 'Lions Den', '180', '1', '1', '16', 'music/Teminite_PsoGnar-Lions_Den.mp3');
+INSERT INTO Song_t VALUES ('0', 'Hazy Shade of Winter', '180', '1', '6', '17', 'music/The_Bangles-Hazy_Shade_of_Winter.mp3');
+INSERT INTO Song_t VALUES ('0', 'Here Comes the Sun', '180', '1', '1', '18', 'music/The_Beatles-Here_Comes_The_Sun.mp3');
+INSERT INTO Song_t VALUES ('0', 'Hey Jude', '180', '1', '1', '18', 'music/The_Beatles-Hey_Jude.mp3');
+INSERT INTO Song_t VALUES ('0', 'Africa', '180', '1', '1', '19', 'music/Toto-Africa.mp3');
+INSERT INTO Song_t VALUES ('0', 'Hey Soul Sister', '180', '1', '1', '20', 'music/Train-Hey_Soul_Sister.mp3');
+INSERT INTO Song_t VALUES ('0', 'Ice Ice Baby', '180', '1', '1', '21', 'music/Vanilla_Ice-Ice_Ice_Baby.mp3');
 
 
 CREATE TABLE PlayList_t (

@@ -1,22 +1,22 @@
 <?php
-error_reporting(E_ALL ^ E_NOTICE); 
+error_reporting(E_ALL ^ E_NOTICE);
 
 $weather=$_POST['weather'];
 
 try
 {
-    $pdo = new PDO('mysql:host=localhost;dbname=revolution', 'root', '');
+    $pdo = new PDO('mysql:host=localhost;dbname=king_music', 'king', '7Jj8bQbCmVd2nVkw');
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->exec('SET NAMES "utf8"');
 
-    $link = mysqli_connect("localhost", "root", "", "revolution");
-    $query = "SELECT song_t.Name, song_t.SongLengthSeconds, song_t.Link, artist_t.ArtistName, song_t.SongID, playlistsongs_t.PlayListID FROM song_t 
-    INNER JOIN artist_t on artist_t.ArtistID = song_t.ArtistID 
+    $link = mysqli_connect("localhost", "king", "7Jj8bQbCmVd2nVkw", "king_music");
+    $query = "SELECT song_t.Name, song_t.SongLengthSeconds, song_t.Link, artist_t.ArtistName, song_t.SongID, playlistsongs_t.PlayListID FROM song_t
+    INNER JOIN artist_t on artist_t.ArtistID = song_t.ArtistID
     INNER JOIN playlistsongs_t on playlistsongs_t.SongID = song_t.SongID
     WHERE song_t.SongID IN (
         SELECT playlistsongs_t.SongID from playlistsongs_t where playlistsongs_t.PlayListID =". $weather .
-    ")" . "AND playlistsongs_t.PlayListID=" . $weather;
-    
+    ")" . "AND playlistsongs_t.PlayListID=" . $weather;  
+
     $playlistquery = "SELECT PlayListID, PlayListName FROM playlist_t;";
 
     $numofsongsslq = "SELECT COUNT(*) as totalsongs FROM playlistsongs_t where playlistsongs_t.PlaylistID = " . $weather . ";";
@@ -91,5 +91,5 @@ catch (PDOException $e)
 <?php endforeach; ?>
 
 <div class="rev-dropdown">
-  
-</div> 
+
+</div>

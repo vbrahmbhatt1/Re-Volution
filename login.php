@@ -1,5 +1,8 @@
 <?php
-include('database.php')
+
+include('database.php');
+
+
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +26,7 @@ include('database.php')
 			<button type="submit" class="button" name="login_user">Let's go!</button>
 		</div>
 		<p style="color: white">
-			Become a member? <p>
+			Become a member. <p>
 				<a href="register.php" style="color: white;">Sign up Here!</a></p></p>
 	</form>
 </body>
